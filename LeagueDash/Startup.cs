@@ -38,7 +38,7 @@ namespace LeagueDash
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>()
+            services.AddDefaultIdentity<Models.ApplicationUser>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
