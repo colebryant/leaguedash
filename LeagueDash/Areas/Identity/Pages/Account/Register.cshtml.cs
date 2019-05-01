@@ -49,6 +49,19 @@ namespace LeagueDash.Areas.Identity.Pages.Account
             public string LastName { get; set; }
 
             [Required]
+            [Display(Name = "Register as a Captain")]
+            public bool IsCaptain { get; set; }
+
+            [Required]
+            public int RoleId
+            {
+                get
+                {
+                    return IsCaptain ? 2 : 1;
+                }
+            }
+
+            [Required]
             [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
@@ -75,7 +88,12 @@ namespace LeagueDash.Areas.Identity.Pages.Account
             returnUrl = returnUrl ?? Url.Content("~/");
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email };
+                var user = new ApplicationUser {
+                    FirstName = Input.FirstName,
+                    LastName = Input.LastName,
+                    RoleId = Input.RoleId,
+                    UserName = Input.Email,
+                    Email = Input.Email };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
