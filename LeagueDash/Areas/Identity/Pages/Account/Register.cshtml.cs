@@ -49,7 +49,7 @@ namespace LeagueDash.Areas.Identity.Pages.Account
             public string LastName { get; set; }
 
             [Required]
-            [Display(Name = "Register as a Captain")]
+            [Display(Name = "Register as a Captain?")]
             public bool IsCaptain { get; set; }
 
             [Required]

@@ -82,9 +82,9 @@ namespace LeagueDash.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "5e24ae46-c24e-48ac-ab9c-f243df1a33ca",
+                            Id = "7809813c-7d09-4b12-a641-4b9e2a82e243",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6625fec4-a960-4965-84ef-8c9e03032f66",
+                            ConcurrencyStamp = "956f3cc4-9ae1-47ca-8904-f0b15e7ca0ac",
                             Email = "rodger@rodger.com",
                             EmailConfirmed = true,
                             FirstName = "Rodger",
@@ -92,18 +92,18 @@ namespace LeagueDash.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "RODGER@RODGER.COM",
                             NormalizedUserName = "RODGER@RODGER.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJPXhqJgIgNOo12W/6AjNArDrrKeXTtQBqB79DYUalUcVFMkPTrqjYuoVa2i7t06QA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJOtTKB+XyJmP9KS3jhRKrFToPXrnQZ0GLiVue39/WmGdrum6CLDXxnOh/2QAmUrkw==",
                             PhoneNumberConfirmed = false,
                             RoleId = 3,
-                            SecurityStamp = "d0724805-c70c-4f19-bab7-711a43711613",
+                            SecurityStamp = "4d29e796-7476-4371-a8f1-f1b61bfb2f4b",
                             TwoFactorEnabled = false,
                             UserName = "rodger@rodger.com"
                         },
                         new
                         {
-                            Id = "fca6c4bb-3a86-4e5f-b54b-b5fceedca323",
+                            Id = "f7120abc-ed7f-4302-9f28-addfe5239385",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "febaea25-bc2d-4695-8a8f-6ea6f6677b7b",
+                            ConcurrencyStamp = "c08d4eff-9648-4aac-aad3-d32132bca939",
                             Email = "steve@steve.com",
                             EmailConfirmed = true,
                             FirstName = "Steve",
@@ -111,18 +111,18 @@ namespace LeagueDash.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "STEVE@STEVE.COM",
                             NormalizedUserName = "STEVE@STEVE.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAELyxSWwrO+8U+sYPZvxLslw6GCMkjDKol5kMHkIKnIAyBEgtX2hzsGJERQBImJ22LA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDLLMlWULeL9yIOmFZMdevCVInmZi2foSdXoSvikENgMc8JGqq1UeS6Wr82jLpiM3A==",
                             PhoneNumberConfirmed = false,
                             RoleId = 2,
-                            SecurityStamp = "79fdec54-e2fc-4334-98ce-1c8d363314a9",
+                            SecurityStamp = "0fdf2dc9-0be7-44b3-9631-9e81290d1973",
                             TwoFactorEnabled = false,
                             UserName = "steve@steve.com"
                         },
                         new
                         {
-                            Id = "4ae7879b-fdfc-4f97-8ff7-b66ff6b736b7",
+                            Id = "0198f28a-1365-483f-9f27-d4aebf193ac1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f021748a-370d-4f55-9c0c-85df7641bbcc",
+                            ConcurrencyStamp = "65fd0063-d1b0-4640-878e-149d7b229de1",
                             Email = "julia@julia.com",
                             EmailConfirmed = true,
                             FirstName = "Julia",
@@ -130,10 +130,10 @@ namespace LeagueDash.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "JULIA@JULIA.COM",
                             NormalizedUserName = "JULIA@JULIA.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIKApeWO9B1h6+Pkm8bQQA4FmdQx6CPN0+zh8RqhIcfZ1AABzVSXe1l8kNTaksRAzw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAO+TmWhl6Did8b7wR1lBdqc7c/uqIzcYNJ16VMwh/jFrE8Ap6iYutpDZhj6JrW6Yg==",
                             PhoneNumberConfirmed = false,
                             RoleId = 1,
-                            SecurityStamp = "217cab4f-1107-4a0c-b23a-f10d36a27ae0",
+                            SecurityStamp = "224c2802-74b3-4094-af02-ecb27b27ec9e",
                             TwoFactorEnabled = false,
                             UserName = "julia@julia.com"
                         });
@@ -148,6 +148,9 @@ namespace LeagueDash.Migrations
                     b.Property<DateTime>("GameTime")
                         .ValueGeneratedOnAdd()
                         .HasDefaultValueSql("GETDATE()");
+
+                    b.Property<string>("Location")
+                        .IsRequired();
 
                     b.Property<int>("TeamAId");
 
@@ -198,7 +201,8 @@ namespace LeagueDash.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CaptainId");
+                    b.Property<string>("CaptainId")
+                        .IsRequired();
 
                     b.Property<DateTime>("DateCreated")
                         .ValueGeneratedOnAdd()

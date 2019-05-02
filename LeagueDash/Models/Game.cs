@@ -18,6 +18,9 @@ namespace LeagueDash.Models
         public DateTime GameTime { get; set; }
 
         [Required]
+        public string Location { get; set; }
+
+        [Required]
         public int TeamAId { get; set; }
 
         [Required]

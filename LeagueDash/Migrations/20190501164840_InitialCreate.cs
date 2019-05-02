@@ -58,6 +58,7 @@ namespace LeagueDash.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     GameTime = table.Column<DateTime>(nullable: false, defaultValueSql: "GETDATE()"),
+                    Location = table.Column<string>(nullable: false),
                     TeamAId = table.Column<int>(nullable: false),
                     TeamBId = table.Column<int>(nullable: false),
                     TeamAScore = table.Column<int>(nullable: true),
@@ -89,7 +90,7 @@ namespace LeagueDash.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: false),
                     DateCreated = table.Column<DateTime>(nullable: false, defaultValueSql: "GETDATE()"),
-                    CaptainId = table.Column<int>(nullable: false)
+                    CaptainId = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -207,9 +208,9 @@ namespace LeagueDash.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "RoleId", "SecurityStamp", "TeamId", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "5e24ae46-c24e-48ac-ab9c-f243df1a33ca", 0, "6625fec4-a960-4965-84ef-8c9e03032f66", "rodger@rodger.com", true, "Rodger", "Commish", false, null, "RODGER@RODGER.COM", "RODGER@RODGER.COM", "AQAAAAEAACcQAAAAEJPXhqJgIgNOo12W/6AjNArDrrKeXTtQBqB79DYUalUcVFMkPTrqjYuoVa2i7t06QA==", null, false, 3, "d0724805-c70c-4f19-bab7-711a43711613", null, false, "rodger@rodger.com" },
-                    { "fca6c4bb-3a86-4e5f-b54b-b5fceedca323", 0, "febaea25-bc2d-4695-8a8f-6ea6f6677b7b", "steve@steve.com", true, "Steve", "Captains", false, null, "STEVE@STEVE.COM", "STEVE@STEVE.COM", "AQAAAAEAACcQAAAAELyxSWwrO+8U+sYPZvxLslw6GCMkjDKol5kMHkIKnIAyBEgtX2hzsGJERQBImJ22LA==", null, false, 2, "79fdec54-e2fc-4334-98ce-1c8d363314a9", null, false, "steve@steve.com" },
-                    { "4ae7879b-fdfc-4f97-8ff7-b66ff6b736b7", 0, "f021748a-370d-4f55-9c0c-85df7641bbcc", "julia@julia.com", true, "Julia", "Players", false, null, "JULIA@JULIA.COM", "JULIA@JULIA.COM", "AQAAAAEAACcQAAAAEIKApeWO9B1h6+Pkm8bQQA4FmdQx6CPN0+zh8RqhIcfZ1AABzVSXe1l8kNTaksRAzw==", null, false, 1, "217cab4f-1107-4a0c-b23a-f10d36a27ae0", null, false, "julia@julia.com" }
+                    { "7809813c-7d09-4b12-a641-4b9e2a82e243", 0, "956f3cc4-9ae1-47ca-8904-f0b15e7ca0ac", "rodger@rodger.com", true, "Rodger", "Commish", false, null, "RODGER@RODGER.COM", "RODGER@RODGER.COM", "AQAAAAEAACcQAAAAEJOtTKB+XyJmP9KS3jhRKrFToPXrnQZ0GLiVue39/WmGdrum6CLDXxnOh/2QAmUrkw==", null, false, 3, "4d29e796-7476-4371-a8f1-f1b61bfb2f4b", null, false, "rodger@rodger.com" },
+                    { "f7120abc-ed7f-4302-9f28-addfe5239385", 0, "c08d4eff-9648-4aac-aad3-d32132bca939", "steve@steve.com", true, "Steve", "Captains", false, null, "STEVE@STEVE.COM", "STEVE@STEVE.COM", "AQAAAAEAACcQAAAAEDLLMlWULeL9yIOmFZMdevCVInmZi2foSdXoSvikENgMc8JGqq1UeS6Wr82jLpiM3A==", null, false, 2, "0fdf2dc9-0be7-44b3-9631-9e81290d1973", null, false, "steve@steve.com" },
+                    { "0198f28a-1365-483f-9f27-d4aebf193ac1", 0, "65fd0063-d1b0-4640-878e-149d7b229de1", "julia@julia.com", true, "Julia", "Players", false, null, "JULIA@JULIA.COM", "JULIA@JULIA.COM", "AQAAAAEAACcQAAAAEAO+TmWhl6Did8b7wR1lBdqc7c/uqIzcYNJ16VMwh/jFrE8Ap6iYutpDZhj6JrW6Yg==", null, false, 1, "224c2802-74b3-4094-af02-ecb27b27ec9e", null, false, "julia@julia.com" }
                 });
 
             migrationBuilder.InsertData(

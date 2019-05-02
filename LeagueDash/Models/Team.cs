@@ -20,6 +20,6 @@ namespace LeagueDash.Models
         public DateTime DateCreated { get; set; }
 
         [Required]
-        public int CaptainId { get; set; }
+        public string CaptainId { get; set; }
     }
 }
