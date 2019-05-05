@@ -1,2 +1,2 @@
 # LeagueDash
-NSS back-end capstone project b
+NSS back-end capstone project
