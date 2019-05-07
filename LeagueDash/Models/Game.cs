@@ -20,14 +20,18 @@ namespace LeagueDash.Models
         [Required]
         public string Location { get; set; }
 
+        [Display(Name = "Team A")]
         [Required]
         public int TeamAId { get; set; }
 
+        [Display(Name = "Team B")]
         [Required]
         public int TeamBId { get; set; }
 
+        [Display(Name = "Team A Score")]
         public int? TeamAScore { get; set; }
 
+        [Display(Name = "Team B Score")]
         public int? TeamBScore { get; set; }
     }
 }

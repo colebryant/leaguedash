@@ -23,6 +23,11 @@
     </dl>
 </div>
 <div>
+    <form asp-action="Edit">
+        <input type="hidden" asp-for="Player.Id" />
+        <input type="hidden" asp-for="Player" />
+        <input type="submit" value="Add Player to Team?" class="btn btn-danger" />
+    </form>
     <a asp-action="Index">Go to All Players</a>
 </div>
 

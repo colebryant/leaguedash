@@ -160,8 +160,8 @@ namespace LeagueDash.Controllers
             return View(team);
         }
 
-        [Authorize]
         // GET: Teams/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
