@@ -31,7 +31,26 @@ namespace LeagueDash.Controllers
         // GET: Teams
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Team.ToListAsync());
+            TeamListViewModel viewModel = new TeamListViewModel();
+
+            viewModel.TeamList = await (
+                from t in _context.Team
+                join au in _context.ApplicationUsers on t.CaptainId equals au.Id into sub
+                from subq in sub.DefaultIfEmpty()
+                select new TeamDetailsViewModel
+                {
+                    Team = new Team
+                    {
+                        Id = t.Id,
+                        Name = t.Name,
+                        DateCreated = t.DateCreated,
+                        CaptainId = t.CaptainId  
+                    },
+                    TeamCaptainFirstName = subq.FirstName,
+                    TeamCaptainLastName = subq.LastName
+                }).ToListAsync();
+
+            return View(viewModel);
         }
 
         // GET: Teams/Details/5
@@ -43,7 +62,7 @@ namespace LeagueDash.Controllers
             }
 
             var team = await _context.Team
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(t => t.Id == id);
             if (team == null)
             {
                 return NotFound();

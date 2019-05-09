@@ -13,7 +13,7 @@ namespace LeagueDash.Models
         [Display(Name = "Game ID")]
         public int Id { get; set; }
 
-        [Display(Name = "Game Time")]
+        [Display(Name = "Date and Time")]
         [Required]
         public DateTime GameTime { get; set; }
 

@@ -1,4 +1,4 @@
-﻿@model LeagueDash.Models.Game
+﻿@model LeagueDash.Models.GameViewModels.GameDetailsViewModel
 
 @{
     ViewData["Title"] = "Details";
@@ -11,44 +11,45 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.GameTime)
+            @Html.DisplayNameFor(model => model.Game.GameTime)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.GameTime)
+            @Html.DisplayFor(model => model.Game.GameTime)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Location)
+            @Html.DisplayNameFor(model => model.Game.Location)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Location)
+            @Html.DisplayFor(model => model.Game.Location)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TeamAId)
+            @Html.DisplayNameFor(model => model.TeamAName)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TeamAId)
+            @Html.DisplayFor(model => model.TeamAName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TeamBId)
+            @Html.DisplayNameFor(model => model.TeamBName)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TeamBId)
+            @Html.DisplayFor(model => model.TeamBName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TeamAScore)
+            @Html.DisplayNameFor(model => model.Game.TeamAScore)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TeamAScore)
+            @Html.DisplayFor(model => model.Game.TeamAScore)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TeamBScore)
+            @Html.DisplayNameFor(model => model.Game.TeamBScore)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TeamBScore)
+            @Html.DisplayFor(model => model.Game.TeamBScore)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model.Game.Id">Edit</a> |
+    <a asp-action="Delete" asp-route-id="@Model.Game.Id">Delete</a> |
     <a asp-action="Index">Back to List</a>
 </div>

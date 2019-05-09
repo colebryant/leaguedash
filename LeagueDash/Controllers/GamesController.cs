@@ -23,7 +23,31 @@ namespace LeagueDash.Controllers
         // GET: Games
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Game.ToListAsync());
+            GameListViewModel viewModel = new GameListViewModel();
+
+            viewModel.GameList = await (
+                from g in _context.Game
+                join t in _context.Team on g.TeamAId equals t.Id into sub1
+                from subq1 in sub1.DefaultIfEmpty()
+                join t in _context.Team on g.TeamBId equals t.Id into sub2
+                from subq2 in sub2.DefaultIfEmpty()
+                select new GameDetailsViewModel
+                {
+                    Game = new Game
+                    {
+                        Id = g.Id,
+                        Location = g.Location,
+                        GameTime = g.GameTime,
+                        TeamAId = g.TeamAId,
+                        TeamBId = g.TeamBId,
+                        TeamAScore = g.TeamAScore,
+                        TeamBScore = g.TeamBScore
+                    },
+                    TeamAName = subq1.Name,
+                    TeamBName = subq2.Name
+                }).ToListAsync();
+
+            return View(viewModel);
         }
 
         // GET: Games/Details/5
@@ -35,13 +59,34 @@ namespace LeagueDash.Controllers
             }
 
             var game = await _context.Game
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(g => g.Id == id);
             if (game == null)
             {
                 return NotFound();
             }
 
-            return View(game);
+            var teamA = await _context.Team
+                .FirstOrDefaultAsync(t => t.Id == game.TeamAId);
+            if (teamA == null)
+            {
+                return NotFound();
+            }
+
+            var teamB = await _context.Team
+                .FirstOrDefaultAsync(t => t.Id == game.TeamBId);
+            if (teamB == null)
+            {
+                return NotFound();
+            }
+
+            GameDetailsViewModel viewModel = new GameDetailsViewModel
+            {
+                Game = game,
+                TeamAName = teamA.Name,
+                TeamBName = teamB.Name
+            };
+
+            return View(viewModel);
         }
 
         // GET: Games/Create

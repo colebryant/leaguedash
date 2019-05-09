@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LeagueDash.Models.Game>
+﻿@model LeagueDash.Models.GameViewModels.GameListViewModel
 
 @{
     ViewData["Title"] = "Index";
@@ -13,51 +13,49 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.GameTime)
+                Date and Time
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Location)
+                Location
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TeamAId)
+                Team A
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TeamBId)
+                Team B
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TeamAScore)
+                Team A Score
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TeamBScore)
+                Team B Score
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.GameList) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.GameTime)
+                @Html.DisplayFor(modelItem => item.Game.GameTime)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Location)
+                @Html.DisplayFor(modelItem => item.Game.Location)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TeamAId)
+                @Html.DisplayFor(modelItem => item.TeamAName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TeamBId)
+                @Html.DisplayFor(modelItem => item.TeamBName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TeamAScore)
+                @Html.DisplayFor(modelItem => item.Game.TeamAScore)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TeamBScore)
+                @Html.DisplayFor(modelItem => item.Game.TeamAScore)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Details" asp-route-id="@item.Game.Id">Details</a>
             </td>
         </tr>
 }

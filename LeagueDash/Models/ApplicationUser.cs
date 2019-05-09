@@ -26,7 +26,6 @@ namespace LeagueDash.Models
         [Required]
         public int RoleId { get; set; }
 
-
         public int? TeamId { get; set; }
     }
 }

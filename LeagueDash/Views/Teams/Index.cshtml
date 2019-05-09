@@ -1,45 +1,37 @@
-﻿@model IEnumerable<LeagueDash.Models.Team>
+﻿@model LeagueDash.Models.TeamViewModels.TeamListViewModel
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h3>The League</h3>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Create New Team</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                Team
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DateCreated)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CaptainId)
+                Captain
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.TeamList) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.Team.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DateCreated)
+                @Html.DisplayFor(modelItem => item.TeamCaptain)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CaptainId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Details" asp-route-id="@item.Team.Id">Details</a>
             </td>
         </tr>
 }
