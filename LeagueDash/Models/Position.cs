@@ -1,4 +1,4 @@
-﻿//This file contains the model representing a user's Role (Player/Captain/Commissioner)
+﻿//This file contains the model representing a user's preferred Position (Goalkeeper/Defender/Midfielder/Forward/No Preference)
 
 using System;
 using System.Collections.Generic;
@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace LeagueDash.Models
 {
-    public class Role
+    public class Position
     {
         public int Id { get; set; }
 
-        [Display(Name = "Role")]
+        [Display(Name = "Preferred Position")]
         public string Name { get; set; }
     }
 }

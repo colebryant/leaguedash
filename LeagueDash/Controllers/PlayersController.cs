@@ -34,8 +34,10 @@ namespace LeagueDash.Controllers
 
             viewModel.PlayerList = await (
                 from au in _context.ApplicationUsers
-                join t in _context.Team on au.TeamId equals t.Id into sub
-                from subq in sub.DefaultIfEmpty()
+                join t in _context.Team on au.TeamId equals t.Id into sub1
+                from subq1 in sub1.DefaultIfEmpty()
+                join p in _context.Position on au.PositionId equals p.Id into sub2
+                from subq2 in sub2.DefaultIfEmpty()
                 select new PlayerDetailsViewModel
                 {
                     Player = new ApplicationUser
@@ -43,10 +45,12 @@ namespace LeagueDash.Controllers
                         Id = au.Id,
                         FirstName = au.FirstName,
                         LastName = au.LastName,
+                        PositionId = au.PositionId,
                         RoleId = au.RoleId,
                         TeamId = au.TeamId
                     },
-                    PlayerTeam = subq.Name
+                    PlayerTeam = subq1.Name,
+                    Position = subq2.Name
                 }).ToListAsync();
 
             return View(viewModel);
@@ -60,7 +64,6 @@ namespace LeagueDash.Controllers
                 return NotFound();
             }
 
-
             var player = await _userManager.FindByIdAsync(id.ToString());
             if (player == null)
             {
@@ -70,50 +73,42 @@ namespace LeagueDash.Controllers
             var team = await _context.Team
                 .FirstOrDefaultAsync(t => t.Id == player.TeamId);
 
+            var position = await _context.Position
+                .FirstOrDefaultAsync(p => p.Id == player.PositionId);
+
+            var currentUser = await GetCurrentUserAsync();
+
             PlayerDetailsViewModel viewModel = new PlayerDetailsViewModel
             {
                 Player = player,
-                PlayerTeam = team == null ? "" : team.Name
+                PlayerTeam = team == null ? "" : team.Name,
+                Position = position.Name,
+                IsOnTeam = player.TeamId == currentUser.TeamId && currentUser.TeamId != null && player.TeamId != null ? true : false
             };
 
             return View(viewModel);
         }
 
-        // GET: Players/Edit/5
-        /*[Authorize]
-        public async Task<IActionResult> Edit(Guid id)
-        {
-            /*if (id == null)
-            {
-                return NotFound();
-            }
-
-            var player = await _userManager.FindByIdAsync(id.ToString());
-            if (player == null)
-            {
-                return NotFound();
-            }
-
-            return View(player);
-        }*/
-
-        // POST: Players/Edit/5
+        // POST: Players/Details/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpGet]
+        [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public async Task<IActionResult> Edit(string id, [Bind("Id, FirstName, LastName, RoleId")] ApplicationUser player)
+        public async Task<IActionResult> Details(Guid Id, PlayerDetailsViewModel viewModel)
         {
-            if (id != player.Id)
-            {
-                return NotFound();
-            }
+            ApplicationUser player = await _userManager.FindByIdAsync(Id.ToString());
 
-            if (ModelState.IsValid)
+            var currentUser = await GetCurrentUserAsync();
+
+            if (player.Id == Id.ToString() && player.TeamId == null && currentUser.TeamId != null)
             {
-                var currentUser = await GetCurrentUserAsync();
                 player.TeamId = currentUser.TeamId;
+                await _userManager.UpdateAsync(player);
+                await _context.SaveChangesAsync();
+            } else if (player.Id == Id.ToString() && player.TeamId == currentUser.TeamId && player.TeamId != null && currentUser.TeamId != null)
+            {
+                player.TeamId = null;
                 await _userManager.UpdateAsync(player);
                 await _context.SaveChangesAsync();
             }

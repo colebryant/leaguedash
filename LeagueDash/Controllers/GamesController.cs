@@ -45,20 +45,44 @@ namespace LeagueDash.Controllers
         }
 
         // GET: Games/Create
-        public async Task<IActionResult> Create()
+        [HttpGet]
+        public IActionResult Create()
         {
+            var Teams = _context.Team.ToList();
+
+            List<SelectListItem> TeamAOptions = new List<SelectListItem>();
+
+            TeamAOptions.Insert(0, new SelectListItem
+            {
+                Text = "Select Team A...",
+                Value = null,
+                Selected = true
+            });
+
+            List<SelectListItem> TeamBOptions = new List<SelectListItem>();
+
+            TeamBOptions.Insert(0, new SelectListItem
+            {
+                Text = "Select Team B...",
+                Value = null,
+                Selected = true
+            });
+
+            foreach (var t in Teams)
+            {
+                SelectListItem li = new SelectListItem
+                {
+                    Value = t.Id.ToString(),
+                    Text = t.Name
+                };
+                TeamAOptions.Add(li);
+                TeamBOptions.Add(li);
+            }
+
             GameCreateViewModel viewModel = new GameCreateViewModel
             {
-                TeamsA =  await _context.Team.Select(t => new SelectListItem
-                {
-                    Value = t.Id.ToString(),
-                    Text = t.Name
-                }).ToListAsync(),
-                TeamsB = await _context.Team.Select(t => new SelectListItem
-                {
-                    Value = t.Id.ToString(),
-                    Text = t.Name
-                }).ToListAsync()
+                TeamAOptions = TeamAOptions,
+                TeamBOptions = TeamBOptions
             };
             return View(viewModel);
         }

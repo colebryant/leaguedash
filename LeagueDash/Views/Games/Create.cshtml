@@ -4,9 +4,7 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>Game</h4>
+<h4>New Game</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -18,14 +16,19 @@
                 <span asp-validation-for="Game.Location" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Game.TeamAId" class="control-label"></label>
-                <select asp-for="Game.TeamAId" asp-items="@Model.TeamAOptions" class="form-control" />
-                <span asp-validation-for="Game.TeamAId" class="text-danger"></span>
+                <label asp-for="Game.GameTime" class="control-label"></label>
+                <input asp-for="Game.GameTime" class="form-control" />
+                <span asp-validation-for="Game.GameTime" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Game.TeamBId" class="control-label"></label>
-                <select asp-for="Game.TeamBId" asp-items="@Model.TeamBOptions" class="form-control" />
-                <span asp-validation-for="Game.TeamBId" class="text-danger"></span>
+                @Html.LabelFor(x => Model.Game.TeamAId, htmlAttributes: new { @class = "control-label" })
+                @Html.DropDownListFor(x => Model.Game.TeamAId, new SelectList(Model.TeamAOptions, "Value", "Text"), htmlAttributes: new { @class = "form-control", id = "TeamA" })
+                @Html.ValidationMessageFor(x => x.Game.TeamAId, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => Model.Game.TeamBId, htmlAttributes: new { @class = "control-label" })
+                @Html.DropDownListFor(x => Model.Game.TeamBId, new SelectList(Model.TeamBOptions, "Value", "Text"), htmlAttributes: new { @class = "form-control", id = "TeamB" })
+                @Html.ValidationMessageFor(x => x.Game.TeamBId, "", new { @class = "text-danger" })
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
@@ -35,6 +38,10 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Back to All Games</a>
 </div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
 

@@ -10,40 +10,8 @@ namespace LeagueDash.Models.GameViewModels
     {
         public Game Game { get; set; }
 
-        public List<SelectListItem> TeamsA { get; set; } = new List<SelectListItem>();
+        public IEnumerable<SelectListItem> TeamAOptions { get; set; }
 
-        public List<SelectListItem> TeamsB { get; set; } = new List<SelectListItem>();
-
-        public List<SelectListItem> TeamAOptions
-        {
-            get
-            {
-                List<SelectListItem> teamList1 = TeamsA;
-                teamList1.Insert(0, new SelectListItem
-                {
-                    Value = null,
-                    Text = "Select a Team...",
-                    Selected = true
-                });
-
-                return teamList1;
-            }
-        }
-
-        public List<SelectListItem> TeamBOptions
-        {
-            get
-            {
-                List<SelectListItem> teamList2 = TeamsB;
-                teamList2.Insert(0, new SelectListItem
-                {
-                    Value = null,
-                    Text = "Select a Team...",
-                    Selected = true
-                });
-
-                return teamList2;
-            }
-        }
+        public IEnumerable<SelectListItem> TeamBOptions { get; set; }
     }
 }

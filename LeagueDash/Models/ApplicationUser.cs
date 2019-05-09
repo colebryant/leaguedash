@@ -20,7 +20,12 @@ namespace LeagueDash.Models
         public string LastName { get; set; }
 
         [Required]
+        [Display(Name = "Preferred Position")]
+        public int PositionId { get; set; }
+
+        [Required]
         public int RoleId { get; set; }
+
 
         public int? TeamId { get; set; }
     }

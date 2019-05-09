@@ -10,7 +10,11 @@ namespace LeagueDash.Models.PlayerViewModels
     {
         public ApplicationUser Player { get; set; }
 
+        [Display(Name = "Team")]
         public string PlayerTeam { get; set; }
+
+        [Display(Name = "Preferred Position")]
+        public string Position { get; set; }
 
         [Display(Name = "Player Name")]
         public string FullName
@@ -20,5 +24,7 @@ namespace LeagueDash.Models.PlayerViewModels
                 return $"{Player.FirstName} {Player.LastName}";
             }
         }
+
+        public bool IsOnTeam { get; set; }
     }
 }

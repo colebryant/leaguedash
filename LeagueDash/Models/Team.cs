@@ -17,6 +17,7 @@ namespace LeagueDash.Models
         public string Name { get; set; }
 
         [Required]
+        [Display(Name = "Date Created")]
         public DateTime DateCreated { get; set; }
 
         [Required]

@@ -11,6 +11,9 @@
                 Player Name
             </th>
             <th>
+                Preferred Position
+            </th>
+            <th>
                 Team
             </th>
             <th></th>
@@ -19,17 +22,20 @@
     <tbody>
         @foreach (var item in Model.PlayerList)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FullName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PlayerTeam)
-                </td>
-                <td>
-                    <a asp-action="Details" asp-route-id="@item.Player.Id">Details</a>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Position)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlayerTeam)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Player.Id">Details</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>
