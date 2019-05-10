@@ -7,6 +7,15 @@ a.navbar-brand {
   word-break: break-all;
 }
 
+.customNav {
+    background-color: #75aaff;
+}
+
+.customImage {
+    width: 2em;
+    margin-right: .5em;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {

@@ -74,6 +74,8 @@ namespace LeagueDash.Controllers
             }
             var captain = await _userManager.FindByIdAsync(team.CaptainId);
 
+            /*var gameWins = await _context.Game.Where(g => g.TeamAId == team.Id || g.TeamBId == team.Id).ToList();*/
+
             var players = await (
                 from au in _context.ApplicationUsers
                 where au.TeamId == team.Id

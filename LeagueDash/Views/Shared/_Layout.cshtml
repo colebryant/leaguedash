@@ -23,9 +23,10 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3" id="customNav">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3 customNav">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">LeagueDash</a>
+                <img src="~/img/soccer-ball.png" class="customImage"/>
+                <a class="navbar-brand text-light" asp-area="" asp-controller="Home" asp-action="Index">LeagueDash</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -34,18 +35,18 @@
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Teams" asp-action="Index">The League</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Teams" asp-action="Index">The League</a>
                         </li>
                         @if (SignInManager.IsSignedIn(User))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Players" asp-action="Index">The Players</a>
+                                <a class="nav-link text-light" asp-area="" asp-controller="Players" asp-action="Index">The Players</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Games" asp-action="Index">The Games</a>
+                                <a class="nav-link text-light" asp-area="" asp-controller="Games" asp-action="Index">The Games</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Games" asp-action="Create">Game Scheduler</a>
+                                <a class="nav-link text-light" asp-area="" asp-controller="Games" asp-action="Create">Game Scheduler</a>
                             </li>
                         }
                     </ul>
@@ -60,8 +61,8 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
+    <footer class="border-top footer text-muted customNav">
+        <div class="container text-light">
             &copy; 2019 - LeagueDash - <a asp-area="" asp-controller="Home" asp-action="About">About</a>
         </div>
     </footer>
