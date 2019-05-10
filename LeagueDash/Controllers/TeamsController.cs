@@ -51,8 +51,14 @@ namespace LeagueDash.Controllers
                         CaptainId = t.CaptainId  
                     },
                     TeamCaptainFirstName = subq.FirstName,
-                    TeamCaptainLastName = subq.LastName
-                }).ToListAsync();
+                    TeamCaptainLastName = subq.LastName,
+                    Wins = _context.Game.Where(g => (g.TeamAId == t.Id && g.TeamAScore > g.TeamBScore) || (g.TeamBId == t.Id && g.TeamBScore > g.TeamAScore)).Count(),
+                    Losses = _context.Game.Where(g => (g.TeamAId == t.Id && g.TeamAScore < g.TeamBScore) || (g.TeamBId == t.Id && g.TeamBScore < g.TeamAScore)).Count(),
+                    Ties = _context.Game.Where(g => (g.TeamAId == t.Id || g.TeamBId == t.Id) && (g.TeamAScore == g.TeamBScore && g.TeamAScore != null && g.TeamBScore != null)).Count()
+
+        }).ToListAsync();
+
+            viewModel.TeamList.OrderBy(t => t.RankingScore);
 
             return View(viewModel);
         }
@@ -74,7 +80,9 @@ namespace LeagueDash.Controllers
             }
             var captain = await _userManager.FindByIdAsync(team.CaptainId);
 
-            /*var gameWins = await _context.Game.Where(g => g.TeamAId == team.Id || g.TeamBId == team.Id).ToList();*/
+            int gameWins = _context.Game.Where(g => (g.TeamAId == team.Id && g.TeamAScore > g.TeamBScore) || (g.TeamBId == team.Id && g.TeamBScore > g.TeamAScore)).Count();
+            int gameLosses = _context.Game.Where(g => (g.TeamAId == team.Id && g.TeamAScore < g.TeamBScore) || (g.TeamBId == team.Id && g.TeamBScore < g.TeamAScore)).Count();
+            int gameTies = _context.Game.Where(g => (g.TeamAId == team.Id || g.TeamBId == team.Id) && (g.TeamAScore == g.TeamBScore && g.TeamAScore != null && g.TeamBScore !=null)).Count();
 
             var players = await (
                 from au in _context.ApplicationUsers
@@ -100,7 +108,10 @@ namespace LeagueDash.Controllers
                 Team = team,
                 TeamCaptainFirstName = captain.FirstName,
                 TeamCaptainLastName = captain.LastName,
-                PlayerList = players
+                PlayerList = players,
+                Wins = gameWins,
+                Losses = gameLosses,
+                Ties = gameTies
             };
 
             return View(viewModel);

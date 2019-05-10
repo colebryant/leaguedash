@@ -196,7 +196,7 @@ namespace LeagueDash.Controllers
                 return View(game);
             } else
             {
-                return View();
+                return RedirectToAction(nameof(Index));
             }
         }
 
@@ -209,7 +209,7 @@ namespace LeagueDash.Controllers
         public async Task<IActionResult> Edit(int id, [Bind("Id,GameTime,Location,TeamAId,TeamBId,TeamAScore,TeamBScore")] Game game)
         {
             var currentUser = await GetCurrentUserAsync();
-            if (currentUser.RoleId == 3)
+            if (currentUser.RoleId == 2 || currentUser.RoleId == 3)
             {
                     if (id != game.Id)
                 {

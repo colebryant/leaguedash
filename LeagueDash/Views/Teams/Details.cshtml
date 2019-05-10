@@ -8,22 +8,28 @@
     <h4>Team Details</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Team.Name)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Team.Name)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
+            Record
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Wins) - @Html.DisplayFor(model => model.Losses) - @Html.DisplayFor(model => model.Ties)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Team.DateCreated)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Team.DateCreated)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.TeamCaptain)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.TeamCaptain)
         </dd>
     </dl>

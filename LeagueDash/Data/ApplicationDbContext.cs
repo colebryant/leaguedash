@@ -46,14 +46,15 @@ namespace LeagueDash.Data
 
             ApplicationUser user2 = new ApplicationUser
             {
-                FirstName = "Steve",
+                FirstName = "Will",
                 LastName = "Captains",
+                TeamId = 1,
                 PositionId = 2,
                 RoleId = 2,
-                UserName = "steve@steve.com",
-                NormalizedUserName = "STEVE@STEVE.COM",
-                Email = "steve@steve.com",
-                NormalizedEmail = "STEVE@STEVE.COM",
+                UserName = "will@will.com",
+                NormalizedUserName = "WILL@WILL.COM",
+                Email = "will@will.com",
+                NormalizedEmail = "WILL@WILL.COM",
                 EmailConfirmed = true,
                 LockoutEnabled = false,
                 SecurityStamp = Guid.NewGuid().ToString("D")
@@ -167,6 +168,7 @@ namespace LeagueDash.Data
             {
                 FirstName = "Billy",
                 LastName = "Captains",
+                TeamId = 2,
                 PositionId = 2,
                 RoleId = 2,
                 UserName = "billy@billy.com",
@@ -180,7 +182,225 @@ namespace LeagueDash.Data
             var passwordHash9 = new PasswordHasher<ApplicationUser>();
             user9.PasswordHash = passwordHash9.HashPassword(user9, "IAmCaptain2!");
 
-            modelBuilder.Entity<ApplicationUser>().HasData(user, user2, user3, user4, user5, user6, user7, user8, user9);
+            ApplicationUser user10 = new ApplicationUser
+            {
+                FirstName = "Jack",
+                LastName = "Sparrow",
+                TeamId = 3,
+                PositionId = 5,
+                RoleId = 2,
+                UserName = "jack@jack.com",
+                NormalizedUserName = "JACK@JACK.COM",
+                Email = "jack@jack.com",
+                NormalizedEmail = "JACK@JACK.COM",
+                EmailConfirmed = true,
+                LockoutEnabled = false,
+                SecurityStamp = Guid.NewGuid().ToString("D")
+            };
+            var passwordHash10 = new PasswordHasher<ApplicationUser>();
+            user10.PasswordHash = passwordHash10.HashPassword(user10, "IAmCaptain3!");
+
+            ApplicationUser user11 = new ApplicationUser
+            {
+                FirstName = "Steve",
+                LastName = "Rodgers",
+                TeamId = 4,
+                PositionId = 4,
+                RoleId = 2,
+                UserName = "steve@steve.com",
+                NormalizedUserName = "STEVE@STEVE.COM",
+                Email = "steve@steve.com",
+                NormalizedEmail = "STEVE@STEVE.COM",
+                EmailConfirmed = true,
+                LockoutEnabled = false,
+                SecurityStamp = Guid.NewGuid().ToString("D")
+            };
+            var passwordHash11 = new PasswordHasher<ApplicationUser>();
+            user11.PasswordHash = passwordHash11.HashPassword(user11, "IAmCaptain4!");
+
+            ApplicationUser user12 = new ApplicationUser
+            {
+                FirstName = "Carol",
+                LastName = "Danvers",
+                TeamId = 5,
+                PositionId = 5,
+                RoleId = 2,
+                UserName = "carol@carol.com",
+                NormalizedUserName = "CAROL@CAROL.COM",
+                Email = "carol@carol.com",
+                NormalizedEmail = "CAROL@CAROL.COM",
+                EmailConfirmed = true,
+                LockoutEnabled = false,
+                SecurityStamp = Guid.NewGuid().ToString("D")
+            };
+            var passwordHash12 = new PasswordHasher<ApplicationUser>();
+            user12.PasswordHash = passwordHash12.HashPassword(user12, "IAmCaptain5!");
+
+            ApplicationUser user13 = new ApplicationUser
+            {
+                FirstName = "John",
+                LastName = "Miller",
+                TeamId = 6,
+                PositionId = 3,
+                RoleId = 2,
+                UserName = "john@john.com",
+                NormalizedUserName = "JOHN@JOHN.COM",
+                Email = "john@john.com",
+                NormalizedEmail = "JOHN@JOHN.COM",
+                EmailConfirmed = true,
+                LockoutEnabled = false,
+                SecurityStamp = Guid.NewGuid().ToString("D")
+            };
+            var passwordHash13 = new PasswordHasher<ApplicationUser>();
+            user13.PasswordHash = passwordHash13.HashPassword(user13, "IAmCaptain6!");
+
+            ApplicationUser user14 = new ApplicationUser
+            {
+                FirstName = "James",
+                LastName = "Kirk",
+                TeamId = 7,
+                PositionId = 3,
+                RoleId = 2,
+                UserName = "james@james.com",
+                NormalizedUserName = "JAMES@JAMES.COM",
+                Email = "james@james.com",
+                NormalizedEmail = "JAMES@JAMES.COM",
+                EmailConfirmed = true,
+                LockoutEnabled = false,
+                SecurityStamp = Guid.NewGuid().ToString("D")
+            };
+            var passwordHash14 = new PasswordHasher<ApplicationUser>();
+            user14.PasswordHash = passwordHash14.HashPassword(user14, "IAmCaptain7!");
+
+            ApplicationUser user15 = new ApplicationUser
+            {
+                FirstName = "Marko",
+                LastName = "Ramius",
+                TeamId = 8,
+                PositionId = 2,
+                RoleId = 2,
+                UserName = "marko@marko.com",
+                NormalizedUserName = "MARKO@MARKO.COM",
+                Email = "marko@marko.com",
+                NormalizedEmail = "MARKO@MARKO.COM",
+                EmailConfirmed = true,
+                LockoutEnabled = false,
+                SecurityStamp = Guid.NewGuid().ToString("D")
+            };
+            var passwordHash15 = new PasswordHasher<ApplicationUser>();
+            user15.PasswordHash = passwordHash15.HashPassword(user15, "IAmCaptain8!");
+
+            ApplicationUser user16 = new ApplicationUser
+            {
+                FirstName = "Terry",
+                LastName = "Captains",
+                TeamId = 9,
+                PositionId = 1,
+                RoleId = 2,
+                UserName = "terry@terry.com",
+                NormalizedUserName = "TERRY@TERYY.COM",
+                Email = "terry@teryy.com",
+                NormalizedEmail = "TERRY@TERRY.COM",
+                EmailConfirmed = true,
+                LockoutEnabled = false,
+                SecurityStamp = Guid.NewGuid().ToString("D")
+            };
+            var passwordHash16 = new PasswordHasher<ApplicationUser>();
+            user16.PasswordHash = passwordHash16.HashPassword(user16, "IAmCaptain9!");
+
+            ApplicationUser user17 = new ApplicationUser
+            {
+                FirstName = "Juan",
+                LastName = "Captains",
+                TeamId = 10,
+                PositionId = 1,
+                RoleId = 2,
+                UserName = "juan@juan.com",
+                NormalizedUserName = "JUAN@JUAN.COM",
+                Email = "juan@juan.com",
+                NormalizedEmail = "JUAN@JUAN.COM",
+                EmailConfirmed = true,
+                LockoutEnabled = false,
+                SecurityStamp = Guid.NewGuid().ToString("D")
+            };
+            var passwordHash17 = new PasswordHasher<ApplicationUser>();
+            user17.PasswordHash = passwordHash17.HashPassword(user16, "IAmCaptain10!");
+
+            modelBuilder.Entity<ApplicationUser>().HasData(user, user2, user3, user4, user5, user6, user7, user8, user9
+                user10, user11, user12, user13, user14, user15, user16);
+
+            modelBuilder.Entity<Team>().HasData(
+                new Team()
+                {
+                    Id = 1,
+                    Name = "Nashville SC",
+                    CaptainId = user2.Id,
+                    DateCreated = DateTime.Now
+                },
+                new Team()
+                {
+                    Id = 2,
+                    Name = "Junior Wombats",
+                    CaptainId = user9.Id,
+                    DateCreated = DateTime.Now
+                },
+                new Team()
+                {
+                    Id = 3,
+                    Name = "Salty Pirates",
+                    CaptainId = user10.Id,
+                    DateCreated = DateTime.Now
+                },
+                new Team()
+                {
+                    Id = 4,
+                    Name = "Earth's Mightiest Heroes",
+                    CaptainId = user11.Id,
+                    DateCreated = DateTime.Now
+                },
+                new Team()
+                {
+                    Id = 5,
+                    Name = "The New Avengers",
+                    CaptainId = user12.Id,
+                    DateCreated = DateTime.Now
+                },
+                new Team()
+                {
+                    Id = 6,
+                    Name = "101st Airborne",
+                    CaptainId = user13.Id,
+                    DateCreated = DateTime.Now
+                },
+                new Team()
+                {
+                    Id = 7,
+                    Name = "Space Invaders",
+                    CaptainId = user14.Id,
+                    DateCreated = DateTime.Now
+                },
+                new Team()
+                {
+                    Id = 8,
+                    Name = "Red October",
+                    CaptainId = user15.Id,
+                    DateCreated = DateTime.Now
+                },
+                new Team()
+                {
+                    Id = 9,
+                    Name = "Tornadoes",
+                    CaptainId = user16.Id,
+                    DateCreated = DateTime.Now
+                },
+                new Team()
+                {
+                    Id = 10,
+                    Name = "Predators",
+                    CaptainId = user17.Id,
+                    DateCreated = DateTime.Now
+                }
+            );
 
             modelBuilder.Entity<Position>().HasData(
                 new Position()

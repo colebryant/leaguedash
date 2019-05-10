@@ -24,6 +24,8 @@ namespace LeagueDash.Models.TeamViewModels
             }
         }
 
+        public ApplicationUser currentUser { get; set; }
+
         public List<PlayerDetailsViewModel> PlayerList { get; set; }
 
         public int Wins { get; set; }
@@ -31,5 +33,13 @@ namespace LeagueDash.Models.TeamViewModels
         public int Losses { get; set; }
 
         public int Ties { get; set; }
+
+        public int RankingScore
+        {
+            get
+            {
+                return Wins - Losses;
+            }
+        }
     }
 }

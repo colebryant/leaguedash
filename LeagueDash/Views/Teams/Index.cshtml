@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h3>The League</h3>
+<h3>Standings</h3>
 
 @if(Model.CurrentUserRoleId == 2 || Model.CurrentUserRoleId == 3)
 {
@@ -14,9 +14,15 @@
 }
 <table class="table">
     <thead>
-        <tr>
+        <tr
+            <th>
+                Rank
+            </th>
             <th>
                 Team
+            </th>
+            <th>
+                Record
             </th>
             <th>
                 Captain
@@ -28,7 +34,13 @@
 @foreach (var item in Model.TeamList) {
         <tr>
             <td>
+                @Model.TeamList.IndexOf(item)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Team.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Wins) - @Html.DisplayFor(modelItem => item.Losses) - @Html.DisplayFor(modelItem => item.Ties)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TeamCaptain)
