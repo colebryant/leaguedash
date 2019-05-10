@@ -6,9 +6,12 @@
 
 <h3>The League</h3>
 
-<p>
-    <a asp-action="Create">Create New Team</a>
-</p>
+@if(Model.CurrentUserRoleId == 2 || Model.CurrentUserRoleId == 3)
+{
+    <p>
+        <a asp-action="Create">Create New Team</a>
+    </p>
+}
 <table class="table">
     <thead>
         <tr>

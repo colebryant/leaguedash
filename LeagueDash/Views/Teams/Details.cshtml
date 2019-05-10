@@ -28,6 +28,35 @@
         </dd>
     </dl>
 </div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Player Name
+            </th>
+            <th>
+                Preferred Position
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.PlayerList)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Position)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-controller="Players" asp-route-id="@item.Player.Id">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Team.Id">Edit</a> |
     <a asp-action="Delete" asp-route-id="@Model.Team.Id">Delete</a> |

@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using LeagueDash.Data;
 using LeagueDash.Models;
 using LeagueDash.Models.GameViewModels;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace LeagueDash.Controllers
 {
@@ -15,16 +17,26 @@ namespace LeagueDash.Controllers
     {
         private readonly ApplicationDbContext _context;
 
-        public GamesController(ApplicationDbContext context)
+        private readonly UserManager<ApplicationUser> _userManager;
+
+        public GamesController(ApplicationDbContext context,
+            UserManager<ApplicationUser> userManager)
         {
+            _userManager = userManager;
             _context = context;
         }
 
+        private Task<ApplicationUser> GetCurrentUserAsync() => _userManager.GetUserAsync(HttpContext.User);
+
         // GET: Games
+        [Authorize]
         public async Task<IActionResult> Index()
         {
+            var currentUser = await GetCurrentUserAsync();
+
             GameListViewModel viewModel = new GameListViewModel();
 
+            viewModel.CurrentUserRoleId = currentUser.RoleId;
             viewModel.GameList = await (
                 from g in _context.Game
                 join t in _context.Team on g.TeamAId equals t.Id into sub1
@@ -51,6 +63,7 @@ namespace LeagueDash.Controllers
         }
 
         // GET: Games/Details/5
+        [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -91,45 +104,53 @@ namespace LeagueDash.Controllers
 
         // GET: Games/Create
         [HttpGet]
-        public IActionResult Create()
+        [Authorize]
+        public async Task<IActionResult> Create()
         {
-            var Teams = _context.Team.ToList();
-
-            List<SelectListItem> TeamAOptions = new List<SelectListItem>();
-
-            TeamAOptions.Insert(0, new SelectListItem
+            var currentUser = await GetCurrentUserAsync();
+            if (currentUser.RoleId == 3)
             {
-                Text = "Select Team A...",
-                Value = null,
-                Selected = true
-            });
+                var Teams = _context.Team.ToList();
 
-            List<SelectListItem> TeamBOptions = new List<SelectListItem>();
+                List<SelectListItem> TeamAOptions = new List<SelectListItem>();
 
-            TeamBOptions.Insert(0, new SelectListItem
-            {
-                Text = "Select Team B...",
-                Value = null,
-                Selected = true
-            });
-
-            foreach (var t in Teams)
-            {
-                SelectListItem li = new SelectListItem
+                TeamAOptions.Insert(0, new SelectListItem
                 {
-                    Value = t.Id.ToString(),
-                    Text = t.Name
-                };
-                TeamAOptions.Add(li);
-                TeamBOptions.Add(li);
-            }
+                    Text = "Select Team A...",
+                    Value = null,
+                    Selected = true
+                });
 
-            GameCreateViewModel viewModel = new GameCreateViewModel
+                List<SelectListItem> TeamBOptions = new List<SelectListItem>();
+
+                TeamBOptions.Insert(0, new SelectListItem
+                {
+                    Text = "Select Team B...",
+                    Value = null,
+                    Selected = true
+                });
+
+                foreach (var t in Teams)
+                {
+                    SelectListItem li = new SelectListItem
+                    {
+                        Value = t.Id.ToString(),
+                        Text = t.Name
+                    };
+                    TeamAOptions.Add(li);
+                    TeamBOptions.Add(li);
+                }
+
+                GameCreateViewModel viewModel = new GameCreateViewModel
+                {
+                    TeamAOptions = TeamAOptions,
+                    TeamBOptions = TeamBOptions
+                };
+                return View(viewModel);
+            } else
             {
-                TeamAOptions = TeamAOptions,
-                TeamBOptions = TeamBOptions
-            };
-            return View(viewModel);
+                return View();
+            }
         }
 
         // POST: Games/Create
@@ -137,31 +158,46 @@ namespace LeagueDash.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Create(GameCreateViewModel viewModel)
         {
-            if (ModelState.IsValid)
+            var currentUser = await GetCurrentUserAsync();
+            if (currentUser.RoleId == 3)
             {
-                _context.Add(viewModel.Game);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    _context.Add(viewModel.Game);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+                return View(viewModel);
+            } else {
+                return View(viewModel);
             }
-            return View(viewModel);
         }
 
         // GET: Games/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
+            var currentUser = await GetCurrentUserAsync();
+            if (currentUser.RoleId == 2 || currentUser.RoleId == 3)
             {
-                return NotFound();
-            }
+                if (id == null)
+                {
+                    return NotFound();
+                }
 
-            var game = await _context.Game.FindAsync(id);
-            if (game == null)
+                var game = await _context.Game.FindAsync(id);
+                if (game == null)
+                {
+                    return NotFound();
+                }
+                return View(game);
+            } else
             {
-                return NotFound();
+                return View();
             }
-            return View(game);
         }
 
         // POST: Games/Edit/5
@@ -169,63 +205,87 @@ namespace LeagueDash.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Edit(int id, [Bind("Id,GameTime,Location,TeamAId,TeamBId,TeamAScore,TeamBScore")] Game game)
         {
-            if (id != game.Id)
+            var currentUser = await GetCurrentUserAsync();
+            if (currentUser.RoleId == 3)
             {
-                return NotFound();
-            }
+                    if (id != game.Id)
+                {
+                    return NotFound();
+                }
 
-            if (ModelState.IsValid)
+                if (ModelState.IsValid)
+                {
+                    try
+                    {
+                        _context.Update(game);
+                        await _context.SaveChangesAsync();
+                    }
+                    catch (DbUpdateConcurrencyException)
+                    {
+                        if (!GameExists(game.Id))
+                        {
+                            return NotFound();
+                        }
+                        else
+                        {
+                            throw;
+                        }
+                    }
+                    return RedirectToAction(nameof(Index));
+                }
+                return View(game);
+            } else
             {
-                try
-                {
-                    _context.Update(game);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!GameExists(game.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                return View();
             }
-            return View(game);
         }
 
         // GET: Games/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
+            var currentUser = await GetCurrentUserAsync();
+            if (currentUser.RoleId == 3)
             {
-                return NotFound();
-            }
+                    if (id == null)
+                {
+                    return NotFound();
+                }
 
-            var game = await _context.Game
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (game == null)
+                var game = await _context.Game
+                    .FirstOrDefaultAsync(m => m.Id == id);
+                if (game == null)
+                {
+                    return NotFound();
+                }
+
+                return View(game);
+            } else
             {
-                return NotFound();
+                return View();
             }
-
-            return View(game);
         }
 
         // POST: Games/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var game = await _context.Game.FindAsync(id);
-            _context.Game.Remove(game);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            var currentUser = await GetCurrentUserAsync();
+            if (currentUser.RoleId == 3)
+            {
+                var game = await _context.Game.FindAsync(id);
+                _context.Game.Remove(game);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            } else
+            {
+                return View();
+            }
         }
 
         private bool GameExists(int id)

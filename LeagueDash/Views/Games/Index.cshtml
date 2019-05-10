@@ -5,10 +5,12 @@
 }
 
 <h1>All Games</h1>
-
+@if (Model.CurrentUserRoleId == 3)
+{
 <p>
     <a asp-action="Create">Schedule New Game</a>
 </p>
+}
 <table class="table">
     <thead>
         <tr>

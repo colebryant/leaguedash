@@ -28,7 +28,10 @@ namespace LeagueDash.Controllers
         private Task<ApplicationUser> GetCurrentUserAsync() => _userManager.GetUserAsync(HttpContext.User);
 
         // GET: Players
-        public async Task<IActionResult> Index()
+        [Authorize]
+        public async Task<IActionResult> Index(
+            string currentFilter,
+            string searchString)
         {
             PlayerListViewModel viewModel = new PlayerListViewModel();
 
@@ -53,10 +56,16 @@ namespace LeagueDash.Controllers
                     Position = subq2.Name
                 }).ToListAsync();
 
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                viewModel.PlayerList = viewModel.PlayerList.Where(p => p.FullName.Contains(searchString)).ToList();
+            }
+
             return View(viewModel);
         }
 
         // GET: Players/Details/5
+        [Authorize]
         public async Task<IActionResult> Details(Guid id)
         {
             if (id == null)
@@ -64,7 +73,7 @@ namespace LeagueDash.Controllers
                 return NotFound();
             }
 
-            var player = await _userManager.FindByIdAsync(id.ToString());
+            var player =  await _context.ApplicationUsers.FirstOrDefaultAsync(t => t.Id == id.ToString());
             if (player == null)
             {
                 return NotFound();
@@ -97,22 +106,27 @@ namespace LeagueDash.Controllers
         [Authorize]
         public async Task<IActionResult> Details(Guid Id, PlayerDetailsViewModel viewModel)
         {
-            ApplicationUser player = await _userManager.FindByIdAsync(Id.ToString());
-
             var currentUser = await GetCurrentUserAsync();
+            if (currentUser.RoleId == 2 || currentUser.RoleId == 3)
+            {
+                ApplicationUser player = await _userManager.FindByIdAsync(Id.ToString());
 
-            if (player.Id == Id.ToString() && player.TeamId == null && currentUser.TeamId != null)
+                if (player.Id == Id.ToString() && player.TeamId == null && currentUser.TeamId != null)
+                {
+                    player.TeamId = currentUser.TeamId;
+                    await _userManager.UpdateAsync(player);
+                    await _context.SaveChangesAsync();
+                } else if (player.Id == Id.ToString() && player.TeamId == currentUser.TeamId && player.TeamId != null && currentUser.TeamId != null)
+                {
+                    player.TeamId = null;
+                    await _userManager.UpdateAsync(player);
+                    await _context.SaveChangesAsync();
+                }
+                return RedirectToAction(nameof(Index));
+            } else
             {
-                player.TeamId = currentUser.TeamId;
-                await _userManager.UpdateAsync(player);
-                await _context.SaveChangesAsync();
-            } else if (player.Id == Id.ToString() && player.TeamId == currentUser.TeamId && player.TeamId != null && currentUser.TeamId != null)
-            {
-                player.TeamId = null;
-                await _userManager.UpdateAsync(player);
-                await _context.SaveChangesAsync();
+                return View();
             }
-            return RedirectToAction(nameof(Index));
         }
     }
 }

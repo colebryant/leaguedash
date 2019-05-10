@@ -10,6 +10,7 @@ using LeagueDash.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using LeagueDash.Models.TeamViewModels;
+using LeagueDash.Models.PlayerViewModels;
 
 namespace LeagueDash.Controllers
 {
@@ -31,8 +32,11 @@ namespace LeagueDash.Controllers
         // GET: Teams
         public async Task<IActionResult> Index()
         {
+            var currentUser = await GetCurrentUserAsync();
+
             TeamListViewModel viewModel = new TeamListViewModel();
 
+            viewModel.CurrentUserRoleId = currentUser.RoleId;
             viewModel.TeamList = await (
                 from t in _context.Team
                 join au in _context.ApplicationUsers on t.CaptainId equals au.Id into sub
@@ -54,6 +58,7 @@ namespace LeagueDash.Controllers
         }
 
         // GET: Teams/Details/5
+        [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -68,11 +73,32 @@ namespace LeagueDash.Controllers
                 return NotFound();
             }
             var captain = await _userManager.FindByIdAsync(team.CaptainId);
+
+            var players = await (
+                from au in _context.ApplicationUsers
+                where au.TeamId == team.Id
+                join p in _context.Position on au.PositionId equals p.Id into sub
+                from subq in sub.DefaultIfEmpty()
+                select new PlayerDetailsViewModel
+                {
+                    Player = new ApplicationUser
+                    {
+                        Id = au.Id,
+                        FirstName = au.FirstName,
+                        LastName = au.LastName,
+                        PositionId = au.PositionId,
+                        RoleId = au.RoleId,
+                        TeamId = au.TeamId
+                    },
+                    Position = subq.Name
+                }).ToListAsync();
+
             TeamDetailsViewModel viewModel = new TeamDetailsViewModel
             {
                 Team = team,
                 TeamCaptainFirstName = captain.FirstName,
-                TeamCaptainLastName = captain.LastName
+                TeamCaptainLastName = captain.LastName,
+                PlayerList = players
             };
 
             return View(viewModel);

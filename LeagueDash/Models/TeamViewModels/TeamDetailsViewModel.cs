@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LeagueDash.Models.PlayerViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -22,5 +23,13 @@ namespace LeagueDash.Models.TeamViewModels
                 return $"{TeamCaptainFirstName} {TeamCaptainLastName}";
             }
         }
+
+        public List<PlayerDetailsViewModel> PlayerList { get; set; }
+
+        public int Wins { get; set; }
+
+        public int Losses { get; set; }
+
+        public int Ties { get; set; }
     }
 }
