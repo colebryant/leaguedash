@@ -326,8 +326,8 @@ namespace LeagueDash.Data
             var passwordHash17 = new PasswordHasher<ApplicationUser>();
             user17.PasswordHash = passwordHash17.HashPassword(user16, "IAmCaptain10!");
 
-            modelBuilder.Entity<ApplicationUser>().HasData(user, user2, user3, user4, user5, user6, user7, user8, user9
-                user10, user11, user12, user13, user14, user15, user16);
+            modelBuilder.Entity<ApplicationUser>().HasData(user, user2, user3, user4, user5, user6, user7, user8, user9,
+                user10, user11, user12, user13, user14, user15, user16, user17);
 
             modelBuilder.Entity<Team>().HasData(
                 new Team()

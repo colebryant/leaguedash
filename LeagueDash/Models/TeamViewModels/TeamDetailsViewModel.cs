@@ -24,7 +24,7 @@ namespace LeagueDash.Models.TeamViewModels
             }
         }
 
-        public ApplicationUser currentUser { get; set; }
+        public ApplicationUser CurrentUser { get; set; }
 
         public List<PlayerDetailsViewModel> PlayerList { get; set; }
 

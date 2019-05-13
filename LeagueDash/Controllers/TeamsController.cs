@@ -30,6 +30,7 @@ namespace LeagueDash.Controllers
         private Task<ApplicationUser> GetCurrentUserAsync() => _userManager.GetUserAsync(HttpContext.User);
 
         // GET: Teams
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             var currentUser = await GetCurrentUserAsync();
@@ -56,9 +57,7 @@ namespace LeagueDash.Controllers
                     Losses = _context.Game.Where(g => (g.TeamAId == t.Id && g.TeamAScore < g.TeamBScore) || (g.TeamBId == t.Id && g.TeamBScore < g.TeamAScore)).Count(),
                     Ties = _context.Game.Where(g => (g.TeamAId == t.Id || g.TeamBId == t.Id) && (g.TeamAScore == g.TeamBScore && g.TeamAScore != null && g.TeamBScore != null)).Count()
 
-        }).ToListAsync();
-
-            viewModel.TeamList.OrderBy(t => t.RankingScore);
+        }).OrderByDescending(t => t.RankingScore).ToListAsync();
 
             return View(viewModel);
         }
@@ -103,11 +102,14 @@ namespace LeagueDash.Controllers
                     Position = subq.Name
                 }).ToListAsync();
 
+            var currentUser = await GetCurrentUserAsync();
+
             TeamDetailsViewModel viewModel = new TeamDetailsViewModel
             {
                 Team = team,
                 TeamCaptainFirstName = captain.FirstName,
                 TeamCaptainLastName = captain.LastName,
+                CurrentUser = currentUser,
                 PlayerList = players,
                 Wins = gameWins,
                 Losses = gameLosses,

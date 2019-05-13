@@ -70,23 +70,14 @@ namespace LeagueDash.Areas.Identity.Pages.Account.Manage
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
 
-            [Required]
-            [Display(Name = "User is Captain")]
-            public bool IsCaptain { get; set; }
-
             public List<SelectListItem> PositionOptions { get; set; }
 
             [Required]
+            [Display(Name = "Preferred Position")]
             public int PositionId { get; set; }
 
             [Required]
-            public int RoleId
-            {
-                get
-                {
-                    return IsCaptain ? 2 : 1;
-                }
-            }
+            public int RoleId { get; set; }
         }
 
         public async Task<IActionResult> OnGetAsync()
@@ -110,7 +101,6 @@ namespace LeagueDash.Areas.Identity.Pages.Account.Manage
                 Email = email,
                 PhoneNumber = phoneNumber,
                 PositionId = positionId,
-                IsCaptain = isCaptain,
                 PositionOptions = PopulateDrowdown()
             };
 

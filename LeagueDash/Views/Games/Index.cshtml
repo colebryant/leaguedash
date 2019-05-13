@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Game Log</h1>
+<h3>Game Log</h3>
 @if (Model.CurrentUserRoleId == 3)
 {
 <p>
@@ -15,22 +15,22 @@
     <thead>
         <tr>
             <th>
-                Date and Time
-            </th>
-            <th>
-                Location
-            </th>
-            <th>
                 Team A
+            </th>
+            <th>
+                Score
             </th>
             <th>
                 Team B
             </th>
             <th>
-                Team A Score
+                Score
             </th>
             <th>
-                Team B Score
+                Date and Time
+            </th>
+            <th>
+                Location
             </th>
             <th></th>
         </tr>
@@ -39,22 +39,22 @@
 @foreach (var item in Model.GameList) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Game.GameTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Game.Location)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.TeamAName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Game.TeamAScore)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TeamBName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Game.TeamAScore)
+                @Html.DisplayFor(modelItem => item.Game.TeamBScore)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Game.TeamAScore)
+                @Html.DisplayFor(modelItem => item.Game.GameTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Game.Location)
             </td>
             <td>
                 <a asp-action="Details" asp-route-id="@item.Game.Id">Details</a>

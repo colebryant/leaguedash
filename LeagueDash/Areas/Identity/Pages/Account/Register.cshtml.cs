@@ -83,6 +83,7 @@ namespace LeagueDash.Areas.Identity.Pages.Account
             public bool IsCaptain { get; set; }
 
             [Required]
+            [Display(Name = "Preferred Position")]
             public int PositionId { get; set; }
 
             [Required]
