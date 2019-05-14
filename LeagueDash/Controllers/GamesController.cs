@@ -71,6 +71,8 @@ namespace LeagueDash.Controllers
                 return NotFound();
             }
 
+            var currentUser = await GetCurrentUserAsync();
+
             var game = await _context.Game
                 .FirstOrDefaultAsync(g => g.Id == id);
             if (game == null)
@@ -96,7 +98,8 @@ namespace LeagueDash.Controllers
             {
                 Game = game,
                 TeamAName = teamA.Name,
-                TeamBName = teamB.Name
+                TeamBName = teamB.Name,
+                CurrentUser = currentUser
             };
 
             return View(viewModel);
@@ -188,12 +191,53 @@ namespace LeagueDash.Controllers
                     return NotFound();
                 }
 
+                var Teams = _context.Team.ToList();
+
+                List<SelectListItem> TeamAOptions = new List<SelectListItem>();
+
+                TeamAOptions.Insert(0, new SelectListItem
+                {
+                    Text = "Select Team A...",
+                    Value = null,
+                    Selected = true
+                });
+
+                List<SelectListItem> TeamBOptions = new List<SelectListItem>();
+
+                TeamBOptions.Insert(0, new SelectListItem
+                {
+                    Text = "Select Team B...",
+                    Value = null,
+                    Selected = true
+                });
+
+                foreach (var t in Teams)
+                {
+                    SelectListItem li = new SelectListItem
+                    {
+                        Value = t.Id.ToString(),
+                        Text = t.Name
+                    };
+                    TeamAOptions.Add(li);
+                    TeamBOptions.Add(li);
+                }
+
                 var game = await _context.Game.FindAsync(id);
                 if (game == null)
                 {
                     return NotFound();
                 }
-                return View(game);
+
+                GameEditViewModel viewModel = new GameEditViewModel
+                {
+                    Game = game,
+                    TeamAOptions = TeamAOptions,
+                    TeamBOptions = TeamBOptions,
+                    CurrentUser = currentUser
+                };
+
+                return View(viewModel);
+
             } else
             {
                 return RedirectToAction(nameof(Index));
@@ -206,12 +250,12 @@ namespace LeagueDash.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,GameTime,Location,TeamAId,TeamBId,TeamAScore,TeamBScore")] Game game)
+        public async Task<IActionResult> Edit(int id, GameEditViewModel viewModel)
         {
             var currentUser = await GetCurrentUserAsync();
             if (currentUser.RoleId == 2 || currentUser.RoleId == 3)
             {
-                    if (id != game.Id)
+                    if (id != viewModel.Game.Id)
                 {
                     return NotFound();
                 }
@@ -220,12 +264,12 @@ namespace LeagueDash.Controllers
                 {
                     try
                     {
-                        _context.Update(game);
+                        _context.Update(viewModel.Game);
                         await _context.SaveChangesAsync();
                     }
                     catch (DbUpdateConcurrencyException)
                     {
-                        if (!GameExists(game.Id))
+                        if (!GameExists(viewModel.Game.Id))
                         {
                             return NotFound();
                         }
@@ -236,7 +280,7 @@ namespace LeagueDash.Controllers
                     }
                     return RedirectToAction(nameof(Index));
                 }
-                return View(game);
+                return View(viewModel);
             } else
             {
                 return View();

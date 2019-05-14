@@ -42,7 +42,7 @@ namespace LeagueDash.Data
                 SecurityStamp = Guid.NewGuid().ToString("D")
             };
             var passwordHash = new PasswordHasher<ApplicationUser>();
-            user.PasswordHash = passwordHash.HashPassword(user, "IAmCommish1!");
+            user.PasswordHash = passwordHash.HashPassword(user, "Abc123!");
 
             ApplicationUser user2 = new ApplicationUser
             {
@@ -60,7 +60,7 @@ namespace LeagueDash.Data
                 SecurityStamp = Guid.NewGuid().ToString("D")
             };
             var passwordHash2 = new PasswordHasher<ApplicationUser>();
-            user2.PasswordHash = passwordHash2.HashPassword(user2, "IAmCaptain1!");
+            user2.PasswordHash = passwordHash2.HashPassword(user2, "Abc123!");
 
             ApplicationUser user3 = new ApplicationUser
             {
@@ -77,7 +77,7 @@ namespace LeagueDash.Data
                 SecurityStamp = Guid.NewGuid().ToString("D")
             };
             var passwordHash3 = new PasswordHasher<ApplicationUser>();
-            user3.PasswordHash = passwordHash3.HashPassword(user3, "IAmPlayer1!");
+            user3.PasswordHash = passwordHash3.HashPassword(user3, "Abc123!");
 
             ApplicationUser user4 = new ApplicationUser
             {
@@ -94,7 +94,7 @@ namespace LeagueDash.Data
                 SecurityStamp = Guid.NewGuid().ToString("D")
             };
             var passwordHash4 = new PasswordHasher<ApplicationUser>();
-            user4.PasswordHash = passwordHash4.HashPassword(user4, "IAmPlayer2!");
+            user4.PasswordHash = passwordHash4.HashPassword(user4, "Abc123!");
 
             ApplicationUser user5 = new ApplicationUser
             {
@@ -111,7 +111,7 @@ namespace LeagueDash.Data
                 SecurityStamp = Guid.NewGuid().ToString("D")
             };
             var passwordHash5 = new PasswordHasher<ApplicationUser>();
-            user5.PasswordHash = passwordHash5.HashPassword(user5, "IAmPlayer3!");
+            user5.PasswordHash = passwordHash5.HashPassword(user5, "Abc123!");
 
             ApplicationUser user6 = new ApplicationUser
             {
@@ -128,7 +128,7 @@ namespace LeagueDash.Data
                 SecurityStamp = Guid.NewGuid().ToString("D")
             };
             var passwordHash6 = new PasswordHasher<ApplicationUser>();
-            user6.PasswordHash = passwordHash6.HashPassword(user6, "IAmPlayer4!");
+            user6.PasswordHash = passwordHash6.HashPassword(user6, "Abc123!");
 
             ApplicationUser user7 = new ApplicationUser
             {
@@ -145,7 +145,7 @@ namespace LeagueDash.Data
                 SecurityStamp = Guid.NewGuid().ToString("D")
             };
             var passwordHash7 = new PasswordHasher<ApplicationUser>();
-            user7.PasswordHash = passwordHash7.HashPassword(user7, "IAmPlayer5!");
+            user7.PasswordHash = passwordHash7.HashPassword(user7, "Abc123!");
 
             ApplicationUser user8 = new ApplicationUser
             {
@@ -162,7 +162,7 @@ namespace LeagueDash.Data
                 SecurityStamp = Guid.NewGuid().ToString("D")
             };
             var passwordHash8 = new PasswordHasher<ApplicationUser>();
-            user8.PasswordHash = passwordHash8.HashPassword(user8, "IAmPlayer6!");
+            user8.PasswordHash = passwordHash8.HashPassword(user8, "Abc123!");
 
             ApplicationUser user9 = new ApplicationUser
             {
@@ -180,7 +180,7 @@ namespace LeagueDash.Data
                 SecurityStamp = Guid.NewGuid().ToString("D")
             };
             var passwordHash9 = new PasswordHasher<ApplicationUser>();
-            user9.PasswordHash = passwordHash9.HashPassword(user9, "IAmCaptain2!");
+            user9.PasswordHash = passwordHash9.HashPassword(user9, "Abc123!");
 
             ApplicationUser user10 = new ApplicationUser
             {
@@ -198,7 +198,7 @@ namespace LeagueDash.Data
                 SecurityStamp = Guid.NewGuid().ToString("D")
             };
             var passwordHash10 = new PasswordHasher<ApplicationUser>();
-            user10.PasswordHash = passwordHash10.HashPassword(user10, "IAmCaptain3!");
+            user10.PasswordHash = passwordHash10.HashPassword(user10, "Abc123!");
 
             ApplicationUser user11 = new ApplicationUser
             {
@@ -216,7 +216,7 @@ namespace LeagueDash.Data
                 SecurityStamp = Guid.NewGuid().ToString("D")
             };
             var passwordHash11 = new PasswordHasher<ApplicationUser>();
-            user11.PasswordHash = passwordHash11.HashPassword(user11, "IAmCaptain4!");
+            user11.PasswordHash = passwordHash11.HashPassword(user11, "Abc123!");
 
             ApplicationUser user12 = new ApplicationUser
             {
@@ -234,7 +234,7 @@ namespace LeagueDash.Data
                 SecurityStamp = Guid.NewGuid().ToString("D")
             };
             var passwordHash12 = new PasswordHasher<ApplicationUser>();
-            user12.PasswordHash = passwordHash12.HashPassword(user12, "IAmCaptain5!");
+            user12.PasswordHash = passwordHash12.HashPassword(user12, "Abc123!");
 
             ApplicationUser user13 = new ApplicationUser
             {
@@ -252,7 +252,7 @@ namespace LeagueDash.Data
                 SecurityStamp = Guid.NewGuid().ToString("D")
             };
             var passwordHash13 = new PasswordHasher<ApplicationUser>();
-            user13.PasswordHash = passwordHash13.HashPassword(user13, "IAmCaptain6!");
+            user13.PasswordHash = passwordHash13.HashPassword(user13, "Abc123!");
 
             ApplicationUser user14 = new ApplicationUser
             {
@@ -270,7 +270,7 @@ namespace LeagueDash.Data
                 SecurityStamp = Guid.NewGuid().ToString("D")
             };
             var passwordHash14 = new PasswordHasher<ApplicationUser>();
-            user14.PasswordHash = passwordHash14.HashPassword(user14, "IAmCaptain7!");
+            user14.PasswordHash = passwordHash14.HashPassword(user14, "Abc123!");
 
             ApplicationUser user15 = new ApplicationUser
             {
@@ -288,7 +288,7 @@ namespace LeagueDash.Data
                 SecurityStamp = Guid.NewGuid().ToString("D")
             };
             var passwordHash15 = new PasswordHasher<ApplicationUser>();
-            user15.PasswordHash = passwordHash15.HashPassword(user15, "IAmCaptain8!");
+            user15.PasswordHash = passwordHash15.HashPassword(user15, "Abc123!");
 
             ApplicationUser user16 = new ApplicationUser
             {
@@ -306,7 +306,7 @@ namespace LeagueDash.Data
                 SecurityStamp = Guid.NewGuid().ToString("D")
             };
             var passwordHash16 = new PasswordHasher<ApplicationUser>();
-            user16.PasswordHash = passwordHash16.HashPassword(user16, "IAmCaptain9!");
+            user16.PasswordHash = passwordHash16.HashPassword(user16, "Abc123!");
 
             ApplicationUser user17 = new ApplicationUser
             {
@@ -324,7 +324,7 @@ namespace LeagueDash.Data
                 SecurityStamp = Guid.NewGuid().ToString("D")
             };
             var passwordHash17 = new PasswordHasher<ApplicationUser>();
-            user17.PasswordHash = passwordHash17.HashPassword(user16, "IAmCaptain10!");
+            user17.PasswordHash = passwordHash17.HashPassword(user16, "Abc123!");
 
             modelBuilder.Entity<ApplicationUser>().HasData(user, user2, user3, user4, user5, user6, user7, user8, user9,
                 user10, user11, user12, user13, user14, user15, user16, user17);
@@ -399,6 +399,329 @@ namespace LeagueDash.Data
                     Name = "Predators",
                     CaptainId = user17.Id,
                     DateCreated = DateTime.Now
+                }
+            );
+
+            modelBuilder.Entity<Game>().HasData(
+                new Game()
+                {
+                    Id = 1,
+                    TeamAId = 1,
+                    TeamBId = 2,
+                    TeamAScore = 4,
+                    TeamBScore = 3,
+                    GameTime = new DateTime(2019, 5, 21, 19, 15, 0),
+                    Location = "Elmington Park"
+                },
+                new Game()
+                {
+                    Id = 2,
+                    TeamAId = 1,
+                    TeamBId = 3,
+                    TeamAScore = 2,
+                    TeamBScore = 0,
+                    GameTime = new DateTime(2019, 5, 26, 19, 15, 0),
+                    Location = "West Park"
+                },
+                new Game()
+                {
+                    Id = 3,
+                    TeamAId = 1,
+                    TeamBId = 4,
+                    TeamAScore = 5,
+                    TeamBScore = 3,
+                    GameTime = new DateTime(2019, 5, 28, 19, 15, 0),
+                    Location = "Elmington Park"
+                },
+                new Game()
+                {
+                    Id = 4,
+                    TeamAId = 1,
+                    TeamBId = 5,
+                    TeamAScore = 2,
+                    TeamBScore = 1,
+                    GameTime = new DateTime(2019, 5, 30, 19, 15, 0),
+                    Location = "West Park"
+                },
+                new Game()
+                {
+                    Id = 5,
+                    TeamAId = 1,
+                    TeamBId = 6,
+                    TeamAScore = 4,
+                    TeamBScore = 1,
+                    GameTime = new DateTime(2019, 6, 4, 19, 15, 0),
+                    Location = "Elmington Park"
+                },
+                new Game()
+                {
+                    Id = 6,
+                    TeamAId = 1,
+                    TeamBId = 7,
+                    TeamAScore = 5,
+                    TeamBScore = 4,
+                    GameTime = new DateTime(2019, 6, 6, 19, 15, 0),
+                    Location = "West Park"
+                },
+                new Game()
+                {
+                    Id = 7,
+                    TeamAId = 2,
+                    TeamBId = 3,
+                    TeamAScore = 4,
+                    TeamBScore = 3,
+                    GameTime = new DateTime(2019, 5, 21, 19, 30, 0),
+                    Location = "Elmington Park"
+                },
+                new Game()
+                {
+                    Id = 8,
+                    TeamAId = 2,
+                    TeamBId = 4,
+                    TeamAScore = 1,
+                    TeamBScore = 2,
+                    GameTime = new DateTime(2019, 5, 26, 19, 30, 0),
+                    Location = "West Park"
+                },
+                new Game()
+                {
+                    Id = 9,
+                    TeamAId = 2,
+                    TeamBId = 5,
+                    TeamAScore = 4,
+                    TeamBScore = 3,
+                    GameTime = new DateTime(2019, 5, 28, 19, 30, 0),
+                    Location = "Elmington Park"
+                },
+                new Game()
+                {
+                    Id = 10,
+                    TeamAId = 2,
+                    TeamBId = 6,
+                    TeamAScore = 2,
+                    TeamBScore = 1,
+                    GameTime = new DateTime(2019, 5, 30, 19, 30, 0),
+                    Location = "West Park"
+                },
+                new Game()
+                {
+                    Id = 11,
+                    TeamAId = 2,
+                    TeamBId = 7,
+                    TeamAScore = 4,
+                    TeamBScore = 1,
+                    GameTime = new DateTime(2019, 6, 4, 19, 30, 0),
+                    Location = "Elmington Park"
+                },
+                new Game()
+                {
+                    Id = 12,
+                    TeamAId = 2,
+                    TeamBId = 8,
+                    TeamAScore = 5,
+                    TeamBScore = 4,
+                    GameTime = new DateTime(2019, 6, 6, 19, 30, 0),
+                    Location = "West Park"
+                },
+                new Game()
+                {
+                    Id = 13,
+                    TeamAId = 3,
+                    TeamBId = 4,
+                    TeamAScore = 0,
+                    TeamBScore = 2,
+                    GameTime = new DateTime(2019, 5, 21, 19, 45, 0),
+                    Location = "Elmington Park"
+                },
+                new Game()
+                {
+                    Id = 14,
+                    TeamAId = 3,
+                    TeamBId = 5,
+                    TeamAScore = 1,
+                    TeamBScore = 2,
+                    GameTime = new DateTime(2019, 5, 26, 19, 45, 0),
+                    Location = "West Park"
+                },
+                new Game()
+                {
+                    Id = 15,
+                    TeamAId = 3,
+                    TeamBId = 6,
+                    TeamAScore = 4,
+                    TeamBScore = 2,
+                    GameTime = new DateTime(2019, 5, 28, 19, 45, 0),
+                    Location = "Elmington Park"
+                },
+                new Game()
+                {
+                    Id = 16,
+                    TeamAId = 3,
+                    TeamBId = 7,
+                    TeamAScore = 2,
+                    TeamBScore = 1,
+                    GameTime = new DateTime(2019, 5, 30, 19, 45, 0),
+                    Location = "West Park"
+                },
+                new Game()
+                {
+                    Id = 17,
+                    TeamAId = 3,
+                    TeamBId = 8,
+                    TeamAScore = 4,
+                    TeamBScore = 1,
+                    GameTime = new DateTime(2019, 6, 4, 19, 45, 0),
+                    Location = "Elmington Park"
+                },
+                new Game()
+                {
+                    Id = 18,
+                    TeamAId = 3,
+                    TeamBId = 9,
+                    TeamAScore = 5,
+                    TeamBScore = 2,
+                    GameTime = new DateTime(2019, 6, 6, 19, 45, 0),
+                    Location = "West Park"
+                },
+                new Game()
+                {
+                    Id = 19,
+                    TeamAId = 4,
+                    TeamBId = 5,
+                    TeamAScore = 7,
+                    TeamBScore = 2,
+                    GameTime = new DateTime(2019, 5, 21, 19, 15, 0),
+                    Location = "Elmington Park"
+                },
+                new Game()
+                {
+                    Id = 20,
+                    TeamAId = 4,
+                    TeamBId = 6,
+                    TeamAScore = 5,
+                    TeamBScore = 6,
+                    GameTime = new DateTime(2019, 5, 26, 19, 15, 0),
+                    Location = "West Park"
+                },
+                new Game()
+                {
+                    Id = 21,
+                    TeamAId = 4,
+                    TeamBId = 7,
+                    TeamAScore = 4,
+                    TeamBScore = 4,
+                    GameTime = new DateTime(2019, 5, 28, 19, 15, 0),
+                    Location = "Elmington Park"
+                },
+                new Game()
+                {
+                    Id = 22,
+                    TeamAId = 4,
+                    TeamBId = 8,
+                    TeamAScore = 1,
+                    TeamBScore = 2,
+                    GameTime = new DateTime(2019, 5, 30, 19, 15, 0),
+                    Location = "West Park"
+                },
+                new Game()
+                {
+                    Id = 23,
+                    TeamAId = 4,
+                    TeamBId = 9,
+                    TeamAScore = 2,
+                    TeamBScore = 1,
+                    GameTime = new DateTime(2019, 6, 4, 19, 15, 0),
+                    Location = "Elmington Park"
+                },
+                new Game()
+                {
+                    Id = 24,
+                    TeamAId = 4,
+                    TeamBId = 10,
+                    TeamAScore = 4,
+                    TeamBScore = 2,
+                    GameTime = new DateTime(2019, 6, 6, 19, 15, 0),
+                    Location = "West Park"
+                },
+                new Game()
+                {
+                    Id = 25,
+                    TeamAId = 5,
+                    TeamBId = 6,
+                    TeamAScore = 3,
+                    TeamBScore = 2,
+                    GameTime = new DateTime(2019, 5, 21, 19, 30, 0),
+                    Location = "Elmington Park"
+                },
+                new Game()
+                {
+                    Id = 26,
+                    TeamAId = 5,
+                    TeamBId = 7,
+                    TeamAScore = 5,
+                    TeamBScore = 2,
+                    GameTime = new DateTime(2019, 5, 26, 19, 30, 0),
+                    Location = "West Park"
+                },
+                new Game()
+                {
+                    Id = 27,
+                    TeamAId = 5,
+                    TeamBId = 8,
+                    TeamAScore = 2,
+                    TeamBScore = 5,
+                    GameTime = new DateTime(2019, 5, 28, 19, 30, 0),
+                    Location = "Elmington Park"
+                },
+                new Game()
+                {
+                    Id = 28,
+                    TeamAId = 5,
+                    TeamBId = 9,
+                    TeamAScore = 2,
+                    TeamBScore = 2,
+                    GameTime = new DateTime(2019, 5, 30, 19, 30, 0),
+                    Location = "West Park"
+                },
+                new Game()
+                {
+                    Id = 29,
+                    TeamAId = 5,
+                    TeamBId = 10,
+                    TeamAScore = 3,
+                    TeamBScore = 2,
+                    GameTime = new DateTime(2019, 6, 4, 19, 30, 0),
+                    Location = "Elmington Park"
+                },
+                new Game()
+                {
+                    Id = 30,
+                    TeamAId = 5,
+                    TeamBId = 1,
+                    TeamAScore = 2,
+                    TeamBScore = 3,
+                    GameTime = new DateTime(2019, 6, 6, 19, 30, 0),
+                    Location = "West Park"
+                },
+                new Game()
+                {
+                    Id = 31,
+                    TeamAId = 9,
+                    TeamBId = 10,    
+                    TeamAScore = 2,
+                    TeamBScore = 3,
+                    GameTime = new DateTime(2019, 5, 21, 19, 30, 0),
+                    Location = "Elmington Park"
+                },
+                new Game()
+                {
+                    Id = 32,
+                    TeamAId = 10,
+                    TeamBId = 8,
+                    TeamAScore = 2,
+                    TeamBScore = 3,
+                    GameTime = new DateTime(2019, 5, 23, 19, 30, 0),
+                    Location = "West Park"
                 }
             );
 

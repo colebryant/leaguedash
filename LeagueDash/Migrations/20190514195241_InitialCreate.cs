@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace LeagueDash.Migrations
 {
-    public partial class NewMigration : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -222,23 +222,60 @@ namespace LeagueDash.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "PositionId", "RoleId", "SecurityStamp", "TeamId", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "5061754a-5d88-4e46-a8ac-62f4434af4ed", 0, "d8001a2b-982f-43d3-988b-c8f513b4ede3", "rodger@rodger.com", true, "Rodger", "Commish", false, null, "RODGER@RODGER.COM", "RODGER@RODGER.COM", "AQAAAAEAACcQAAAAEMojExUgT82Sawpwveu6LLFuEpNJxX4iUBu77tG5nPuyvouw3wm+xvL1EDy5K0iJWA==", null, false, 1, 3, "b8eef87f-e160-425f-9d50-73170ecd9bcc", null, false, "rodger@rodger.com" },
-                    { "e5a76361-c5f6-4ba1-a097-fd15b1eff8a4", 0, "c4f35365-ce41-48a6-979a-8fa4c9848371", "juan@juan.com", true, "Juan", "Captains", false, null, "JUAN@JUAN.COM", "JUAN@JUAN.COM", "AQAAAAEAACcQAAAAEHzRUkLjFvbfcTfPDkXInVgFkl8WdNqmbl14YQxO6ZdI7ltG0KmQ5yKnBtVDwXFQXw==", null, false, 1, 2, "e5ce20ae-b34c-4437-865e-92fdd39696c1", 10, false, "juan@juan.com" },
-                    { "0a045a11-593d-421c-b073-415a6b0a7ab0", 0, "985c4af2-84d9-4e89-a5bd-e086367f6bde", "terry@teryy.com", true, "Terry", "Captains", false, null, "TERRY@TERRY.COM", "TERRY@TERYY.COM", "AQAAAAEAACcQAAAAEO098INs0gJ1jO7kUKKCIFsOKP/DqX2QXmWYtMeuSbH4Lh0UfNef1GNt+yUeGSvY/w==", null, false, 1, 2, "0e5ab7c1-56a9-4502-9420-27aff0d19e81", 9, false, "terry@terry.com" },
-                    { "114fa0b1-9ac0-443c-b9c2-c8c97d44cf31", 0, "5b4d933c-8d12-4be6-9cff-89f514ed2996", "marko@marko.com", true, "Marko", "Ramius", false, null, "MARKO@MARKO.COM", "MARKO@MARKO.COM", "AQAAAAEAACcQAAAAEAT0cWz1nOKfTkvZDoUuhHjyOfq1XneIE5o3AOYZCaSdxlAuFwG8fWb95ntjakmXPQ==", null, false, 2, 2, "5b2ff256-bef7-4bd5-9365-bb3055158958", 8, false, "marko@marko.com" },
-                    { "0b05f2d7-41aa-4ee1-a41c-dac43dfdb87b", 0, "d9a5f173-120e-46d3-ba41-59656aa784c9", "james@james.com", true, "James", "Kirk", false, null, "JAMES@JAMES.COM", "JAMES@JAMES.COM", "AQAAAAEAACcQAAAAEGpVke1xhMi/PRfUcHQbvaVbNjKh+uzxIn1avVTEVptXk5a0MwNe/C1cqtaos44ydg==", null, false, 3, 2, "25f2b386-7147-49eb-862d-fe6c840b0812", 7, false, "james@james.com" },
-                    { "62b2147b-c2f2-48de-89e6-6aed4050737f", 0, "b30da9e4-7bb2-4c1d-92b1-d15b677c2ca4", "john@john.com", true, "John", "Miller", false, null, "JOHN@JOHN.COM", "JOHN@JOHN.COM", "AQAAAAEAACcQAAAAEE69b1hC5Jf8rGo3xdR06opS9yMjE0v6rVHD34DwUkWNB8aBypOFU6nBLuhP7LSCCQ==", null, false, 3, 2, "3bf008a8-8561-41cb-b33c-a22d08ebaac9", 6, false, "john@john.com" },
-                    { "6186e7db-c20e-4184-afda-d7acda1b38c7", 0, "a4e2e87f-85b5-4a0d-a961-94feffe0fb2f", "carol@carol.com", true, "Carol", "Danvers", false, null, "CAROL@CAROL.COM", "CAROL@CAROL.COM", "AQAAAAEAACcQAAAAEN4SQTaFmA8/pSB3xYCC2zMgmeBjGH+X6dUmUNPomkzmJomFHTyed1ngX0snXWwqoA==", null, false, 5, 2, "aeda91fb-8f10-4493-996c-84b5fc7325d7", 5, false, "carol@carol.com" },
-                    { "0b8b3a0c-fbd9-491e-a8c4-f400e0e0a121", 0, "29121ba3-6c02-4620-80a2-c158b35db0d2", "steve@steve.com", true, "Steve", "Rodgers", false, null, "STEVE@STEVE.COM", "STEVE@STEVE.COM", "AQAAAAEAACcQAAAAEGS18QhxZdiJfagAMzF7CyrvJcd25vZOxkGv63WrS4yaPbPor45NnGxDJO38atsEWA==", null, false, 4, 2, "dfac3e70-df55-46e2-b833-cfd1bb54c19d", 4, false, "steve@steve.com" },
-                    { "8f266432-cb10-486b-97c8-8fe339426109", 0, "50f8095f-7cc9-4e14-b5fb-9aecc96b7701", "jack@jack.com", true, "Jack", "Sparrow", false, null, "JACK@JACK.COM", "JACK@JACK.COM", "AQAAAAEAACcQAAAAEIYYsI7U8SXOT6sg63qjpAYtwLRuI7qXySEclcS9WA/F0yhI4jdgA7V6i3YFdPVCnw==", null, false, 5, 2, "f4f2c07f-d0b2-463d-9c7a-574733b17bdc", 3, false, "jack@jack.com" },
-                    { "82b1ff03-eb79-4527-9811-b7993160af3e", 0, "d5fefc13-d51d-4d65-928b-06adfa03ef0d", "bastion@bastion.com", true, "Bastion", "Schweinsteiger", false, null, "BASTION@BASTION.COM", "BASTION@BASTION.COM", "AQAAAAEAACcQAAAAEA/tgqsUHKnY4Mrdy5UewugtEObJ96osbnGUci4Jj5UQJpDgdHXaMB6CwOKYTcN1Yg==", null, false, 4, 1, "f8c39ead-3f56-4c6b-913d-67db2f524346", null, false, "bastion@bastion.com" },
-                    { "c9b5a564-eb31-49b5-8e91-7f2adbf56d80", 0, "35bd07ed-195e-4176-b6a8-79024b687673", "thomas@thomas.com", true, "Thomas", "Muller", false, null, "THOMAS@THOMAS.COM", "THOMAS@THOMAS.COM", "AQAAAAEAACcQAAAAEJy0EBIcXjHBQQ2KSYS1Aejg/RCaTSwXXL/gvZSnjAxtNsQDzJrzKcQ8LP2gIcz73A==", null, false, 4, 1, "ee022a3a-82f3-4598-ba52-59ffbd31da91", null, false, "thomas@thomas.com" },
-                    { "98a0d6f6-17d6-44ed-8c00-5bc71cd8bcb0", 0, "bbfcf0ee-1f42-4527-9529-946c3fec336b", "sergio@sergio.com", true, "Sergio", "Ramos", false, null, "SERGIO@SERGIO.COM", "SERGIO@SERGIO.COM", "AQAAAAEAACcQAAAAEBaQ0aTOXrEUAgyVTwHkqZQcvvMpRQkOsLRv9Wk3e7oUS8qW5SPRZlngb/LbWhUWqQ==", null, false, 3, 1, "df49187a-d6d2-4d44-9698-cf042a3913df", null, false, "sergio@sergio.com" },
-                    { "2fa67c53-605b-4889-a3af-b1d00c5070ec", 0, "1d95a438-83bb-4424-b6e3-2b54833ad9ce", "cristiano@cristiano.com", true, "Cristiano", "Ronaldo", false, null, "CRISTIANO@CRISTIANO.COM", "CRISTIANO@CRISTIANO.COM", "AQAAAAEAACcQAAAAEKDDzBBmniOgQ4BPwfZieoqdInI+cNriC0frN2PEipCULH9ienCPQgbQvm/KNEzlxg==", null, false, 4, 1, "4722bff1-3527-4990-b3b4-d7918db46b30", null, false, "cristiano@cristiano.com" },
-                    { "39523271-c006-46a0-bc53-e531322d0500", 0, "3c92e065-6460-4d38-b2ac-4ea0266c7c4e", "lionel@lionel.com", true, "Lionel", "Messi", false, null, "LIONEL@LIONEL.COM", "LIONEL@LIONEL.COM", "AQAAAAEAACcQAAAAENp38dt4KLPKzc/bmVLg1wkvxFHANN1vdgZTyZF07coIcZGNGk3wAUBK4/omWoYazw==", null, false, 5, 1, "5c076caf-ec3e-4b44-af12-572827b34eab", null, false, "lionel@lionel.com" },
-                    { "44b7cbc1-f848-41bb-a6de-ab19bd985895", 0, "12079da0-69fd-41b5-916e-30d13a46bd85", "julia@julia.com", true, "Julia", "Players", false, null, "JULIA@JULIA.COM", "JULIA@JULIA.COM", "AQAAAAEAACcQAAAAEB76m4J60GnsTa+gUUXfUlT5bR1rn51DBYgnd5TYtdLSpq1zvHLoPZYOLnm0AiqL2A==", null, false, 5, 1, "debca76a-21c1-453a-a683-728cb6eb945d", null, false, "julia@julia.com" },
-                    { "53f1ba03-0ee6-48ca-89ff-eee142296415", 0, "9fd5d7d0-16db-4751-a308-114efa4ed5e0", "will@will.com", true, "Will", "Captains", false, null, "WILL@WILL.COM", "WILL@WILL.COM", "AQAAAAEAACcQAAAAEIOjZUleFWFkDhpDJ4InlDpcOFZDK7GgIa58DR5HguI5QuZWfMpWrQ0pqPDD4cyp3Q==", null, false, 2, 2, "4461f143-d609-4254-8947-4997cdd4d419", 1, false, "will@will.com" },
-                    { "1d72818d-8976-44ce-93a7-f47f9feea63d", 0, "3be19c49-de9f-4352-a894-347414bff2ba", "billy@billy.com", true, "Billy", "Captains", false, null, "BILLY@BILLY.COM", "BILLY@BILLY.COM", "AQAAAAEAACcQAAAAEGihmQrhz4CsJ494S38JVO2Fsm3A1WavIi/HO1977Iux0QnR+RGX2yAcf7CYjy5IwQ==", null, false, 2, 2, "46e0c5bb-0fc1-481a-b49a-99a35806601a", 2, false, "billy@billy.com" }
+                    { "ce96ae73-4dc3-4bed-bd0b-de0668220618", 0, "bbcc79d4-ad38-4a49-9dce-daca9c88139d", "rodger@rodger.com", true, "Rodger", "Commish", false, null, "RODGER@RODGER.COM", "RODGER@RODGER.COM", "AQAAAAEAACcQAAAAEIQTrzNd9smYjFpywJt8HLpLuxMXDoXiCQXFi82Onay4wdC/y866tXRfREw8poEUZg==", null, false, 1, 3, "97704b3d-6c68-495f-9b6b-3ef1b0f176f6", null, false, "rodger@rodger.com" },
+                    { "32a6205f-51d6-4d5e-b34d-5b3d8aea546f", 0, "9ff6ec08-209b-4a47-9461-e56fe7f6dd3a", "juan@juan.com", true, "Juan", "Captains", false, null, "JUAN@JUAN.COM", "JUAN@JUAN.COM", "AQAAAAEAACcQAAAAEASdfmL/03uL105qlZdmknXENGNLGcZlvzyBZckUb+iQfiKiEHU7WKrVJruWOI7R2Q==", null, false, 1, 2, "030454b8-95c4-4086-884d-de1da2a457c0", 10, false, "juan@juan.com" },
+                    { "e8a990f7-f7eb-402b-a751-032f589f151b", 0, "3b290183-4edb-4d35-a107-738e622954d5", "marko@marko.com", true, "Marko", "Ramius", false, null, "MARKO@MARKO.COM", "MARKO@MARKO.COM", "AQAAAAEAACcQAAAAEKEHts1jAgH1T2TsB1SNJdNfuzooakUbKDXIQMDk+v3rUhpNkd4yGDfGUNEwoQfxYw==", null, false, 2, 2, "cd4e9cc6-c391-4205-9637-9767861e7327", 8, false, "marko@marko.com" },
+                    { "643f61f2-e472-4286-85a1-d0745e3acd3d", 0, "13d41d76-2af0-4e70-96cb-b626e2e4157e", "james@james.com", true, "James", "Kirk", false, null, "JAMES@JAMES.COM", "JAMES@JAMES.COM", "AQAAAAEAACcQAAAAELZUrs+Zr2VCv0nU/oGc82NVZaIoZ1kz/UmyaKm/DFTzJ9SzGCQCREIfk6G6WXxX9Q==", null, false, 3, 2, "e5d6144b-400e-4470-85c6-0469374bd66c", 7, false, "james@james.com" },
+                    { "ec515133-6e28-438f-a93c-d8d3bd897b34", 0, "32669fa1-91f0-4bd0-827d-ca1f0b01f524", "john@john.com", true, "John", "Miller", false, null, "JOHN@JOHN.COM", "JOHN@JOHN.COM", "AQAAAAEAACcQAAAAENAivw+W3u/gftro/h56wd4l85zqCPI1iu7g3dMHPC0xetOqGiD8QJdvy72nNVND8A==", null, false, 3, 2, "058fb48c-a80c-4904-b3e2-493a431ba305", 6, false, "john@john.com" },
+                    { "de01d5f4-de08-4b1d-bd03-0f0b3ead376b", 0, "91924fca-5003-4d3c-bbec-51f5d4ad7a8b", "carol@carol.com", true, "Carol", "Danvers", false, null, "CAROL@CAROL.COM", "CAROL@CAROL.COM", "AQAAAAEAACcQAAAAEJJAoAZv4Mj/X7+qDEHepzJmX2lxA8CWBwYKnM8fWk/v0CL6w67cDqknpwrxrjUE6g==", null, false, 5, 2, "222ea9dc-6354-4cb7-a5ce-73de726b1740", 5, false, "carol@carol.com" },
+                    { "ffe39243-ed2a-4531-a1d4-7d87adcd9461", 0, "0314a599-5773-4cff-b4be-645c2740b067", "steve@steve.com", true, "Steve", "Rodgers", false, null, "STEVE@STEVE.COM", "STEVE@STEVE.COM", "AQAAAAEAACcQAAAAEEKJ/LB+CSKgDL1Bg+jykwv0FfKY3TFziEtXpQNFqOdbDuT5pOKvyB0K/RXELgEpsQ==", null, false, 4, 2, "76afa8cc-dcdf-484d-8f9a-353ac38e1b44", 4, false, "steve@steve.com" },
+                    { "0a2fa575-0739-4ee6-a797-83370a17b615", 0, "caf2acbc-ad46-456f-b125-513edfaa3f6d", "jack@jack.com", true, "Jack", "Sparrow", false, null, "JACK@JACK.COM", "JACK@JACK.COM", "AQAAAAEAACcQAAAAECBEeEcR9R+4iiI609xyhi0Lk4Wb7ek7Ou4wG38A5IDpU0NNyIkhNql4DYr0+oJTJg==", null, false, 5, 2, "1b8ee3d2-bdf5-4d4a-8815-543ec6db9ab4", 3, false, "jack@jack.com" },
+                    { "75fb5fe3-0eef-4642-b893-fca05d421344", 0, "fa084057-1462-4369-87aa-a1af51e8850d", "terry@teryy.com", true, "Terry", "Captains", false, null, "TERRY@TERRY.COM", "TERRY@TERYY.COM", "AQAAAAEAACcQAAAAEI4/MzAKJYY/TfTPEL8VAJdR924VJnhCh+qenhoCwaLHFNLe2LAQ5bDfGK05Eautog==", null, false, 1, 2, "264073a7-13c6-4334-88b8-6ca2578f13e7", 9, false, "terry@terry.com" },
+                    { "5af0f2e1-71f3-484d-a517-aeba23c97473", 0, "f7727abd-680d-46a0-8c6c-2aa075f0cae9", "bastion@bastion.com", true, "Bastion", "Schweinsteiger", false, null, "BASTION@BASTION.COM", "BASTION@BASTION.COM", "AQAAAAEAACcQAAAAEOoxqi7Ox7L1Ol4+t71K/d439TnkdKsVMLYvBdHTdTnmfRIRxrlvnfGmUhF9PL6ybw==", null, false, 4, 1, "828419d6-4e70-4d81-9335-a57372a238e8", null, false, "bastion@bastion.com" },
+                    { "e189db7b-2e13-453a-a5ea-b12d55f1054f", 0, "64864092-35db-445b-9a68-d812a3d62275", "thomas@thomas.com", true, "Thomas", "Muller", false, null, "THOMAS@THOMAS.COM", "THOMAS@THOMAS.COM", "AQAAAAEAACcQAAAAEJtH79JSpiZB4m898uiFBRDQ8M+5O8PsPzA15QIt9wPPFUUYRxLGs0w29thDKNt+Pw==", null, false, 4, 1, "0c2c2b09-6cd0-45f2-b9dd-ee82fb652ff3", null, false, "thomas@thomas.com" },
+                    { "d86ee9dd-418e-4f2e-9e37-8df4b14f19ee", 0, "68fff582-0c1b-46e7-8d43-22e0e188f98b", "sergio@sergio.com", true, "Sergio", "Ramos", false, null, "SERGIO@SERGIO.COM", "SERGIO@SERGIO.COM", "AQAAAAEAACcQAAAAEMh1I4MP8lhTr4ZYn6MyoschqnmxiCB0BvZiic0Byi11hGwMPfpgHwVqBKOOtsFIiA==", null, false, 3, 1, "dc627198-d9a3-4de0-adf7-f14a465cb082", null, false, "sergio@sergio.com" },
+                    { "1d743f4e-fbf6-427b-8382-d545e070c959", 0, "4816e40a-7930-4380-9dd5-c7ef39abeea8", "cristiano@cristiano.com", true, "Cristiano", "Ronaldo", false, null, "CRISTIANO@CRISTIANO.COM", "CRISTIANO@CRISTIANO.COM", "AQAAAAEAACcQAAAAENRUVVKXA5Ya3KL9RreVcKXHAKAEs0FbfRqawmwzLtP5i2Q7AYLGDnuJyQMeM3Skhg==", null, false, 4, 1, "76f54498-4632-4f63-81db-e953dd3809b1", null, false, "cristiano@cristiano.com" },
+                    { "462ced06-6c69-45ab-ae3d-36c31bc6ab86", 0, "4e7908cf-6fd2-4bda-90bb-88d69efa1ab7", "lionel@lionel.com", true, "Lionel", "Messi", false, null, "LIONEL@LIONEL.COM", "LIONEL@LIONEL.COM", "AQAAAAEAACcQAAAAEHN6Yi9WIZrzw49mI5C4SbXafCVCY84yXKT2YLp2K9rVPaSkyspA0aeVS9xkZCcIyA==", null, false, 5, 1, "9e89fe99-c83b-4910-bce1-d4cb7c445efe", null, false, "lionel@lionel.com" },
+                    { "fe134dea-dd8e-4c07-9201-4472a6409ac7", 0, "ba9aef42-1e76-47bb-9515-e82900cff2aa", "julia@julia.com", true, "Julia", "Players", false, null, "JULIA@JULIA.COM", "JULIA@JULIA.COM", "AQAAAAEAACcQAAAAEIECs/xxltFYOToFhHAgnDMy8tZCmhVgot8EC+tM1IfjcK4BT2lFO+sfVeT6ZfxbCg==", null, false, 5, 1, "b84beed6-2563-41ec-96a4-49008c939e49", null, false, "julia@julia.com" },
+                    { "0251cc8d-baaa-4aa6-ba92-1c95d6377770", 0, "66aa342f-7986-493c-b1a8-c13930e29e8c", "will@will.com", true, "Will", "Captains", false, null, "WILL@WILL.COM", "WILL@WILL.COM", "AQAAAAEAACcQAAAAEAzkmB0bHPdifp5wLU83M9zCzwjmaKBb5PRqUfDBKKxoZ1J83t3dFg5jK8BB+ewF3g==", null, false, 2, 2, "ee7ac600-2647-445e-a296-7d8760baa085", 1, false, "will@will.com" },
+                    { "80e593ff-b140-40cb-9947-916ff58a9e4f", 0, "d2ea1d7d-287e-4a9d-a524-6af7320ea476", "billy@billy.com", true, "Billy", "Captains", false, null, "BILLY@BILLY.COM", "BILLY@BILLY.COM", "AQAAAAEAACcQAAAAENrysqC6HVwv3buGvj7QAhD44NStes94i4YcDMOaQMydoX4U0H/+zOqbdNEVunBRdQ==", null, false, 2, 2, "e892b0ca-5fb5-4f4d-bef4-ff5603440125", 2, false, "billy@billy.com" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Game",
+                columns: new[] { "Id", "GameTime", "Location", "TeamAId", "TeamAScore", "TeamBId", "TeamBScore" },
+                values: new object[,]
+                {
+                    { 19, new DateTime(2019, 5, 21, 19, 15, 0, 0, DateTimeKind.Unspecified), "Elmington Park", 4, 7, 5, 2 },
+                    { 20, new DateTime(2019, 5, 26, 19, 15, 0, 0, DateTimeKind.Unspecified), "West Park", 4, 5, 6, 6 },
+                    { 21, new DateTime(2019, 5, 28, 19, 15, 0, 0, DateTimeKind.Unspecified), "Elmington Park", 4, 4, 7, 4 },
+                    { 22, new DateTime(2019, 5, 30, 19, 15, 0, 0, DateTimeKind.Unspecified), "West Park", 4, 1, 8, 2 },
+                    { 23, new DateTime(2019, 6, 4, 19, 15, 0, 0, DateTimeKind.Unspecified), "Elmington Park", 4, 2, 9, 1 },
+                    { 24, new DateTime(2019, 6, 6, 19, 15, 0, 0, DateTimeKind.Unspecified), "West Park", 4, 4, 10, 2 },
+                    { 28, new DateTime(2019, 5, 30, 19, 30, 0, 0, DateTimeKind.Unspecified), "West Park", 5, 2, 9, 2 },
+                    { 26, new DateTime(2019, 5, 26, 19, 30, 0, 0, DateTimeKind.Unspecified), "West Park", 5, 5, 7, 2 },
+                    { 27, new DateTime(2019, 5, 28, 19, 30, 0, 0, DateTimeKind.Unspecified), "Elmington Park", 5, 2, 8, 5 },
+                    { 29, new DateTime(2019, 6, 4, 19, 30, 0, 0, DateTimeKind.Unspecified), "Elmington Park", 5, 3, 10, 2 },
+                    { 30, new DateTime(2019, 6, 6, 19, 30, 0, 0, DateTimeKind.Unspecified), "West Park", 5, 2, 1, 3 },
+                    { 18, new DateTime(2019, 6, 6, 19, 45, 0, 0, DateTimeKind.Unspecified), "West Park", 3, 5, 9, 2 },
+                    { 25, new DateTime(2019, 5, 21, 19, 30, 0, 0, DateTimeKind.Unspecified), "Elmington Park", 5, 3, 6, 2 },
+                    { 17, new DateTime(2019, 6, 4, 19, 45, 0, 0, DateTimeKind.Unspecified), "Elmington Park", 3, 4, 8, 1 },
+                    { 16, new DateTime(2019, 5, 30, 19, 45, 0, 0, DateTimeKind.Unspecified), "West Park", 3, 2, 7, 1 },
+                    { 2, new DateTime(2019, 5, 26, 19, 15, 0, 0, DateTimeKind.Unspecified), "West Park", 1, 2, 3, 0 },
+                    { 1, new DateTime(2019, 5, 21, 19, 15, 0, 0, DateTimeKind.Unspecified), "Elmington Park", 1, 4, 2, 3 },
+                    { 3, new DateTime(2019, 5, 28, 19, 15, 0, 0, DateTimeKind.Unspecified), "Elmington Park", 1, 5, 4, 3 },
+                    { 4, new DateTime(2019, 5, 30, 19, 15, 0, 0, DateTimeKind.Unspecified), "West Park", 1, 2, 5, 1 },
+                    { 5, new DateTime(2019, 6, 4, 19, 15, 0, 0, DateTimeKind.Unspecified), "Elmington Park", 1, 4, 6, 1 },
+                    { 6, new DateTime(2019, 6, 6, 19, 15, 0, 0, DateTimeKind.Unspecified), "West Park", 1, 5, 7, 4 },
+                    { 8, new DateTime(2019, 5, 26, 19, 30, 0, 0, DateTimeKind.Unspecified), "West Park", 2, 1, 4, 2 },
+                    { 7, new DateTime(2019, 5, 21, 19, 30, 0, 0, DateTimeKind.Unspecified), "Elmington Park", 2, 4, 3, 3 },
+                    { 10, new DateTime(2019, 5, 30, 19, 30, 0, 0, DateTimeKind.Unspecified), "West Park", 2, 2, 6, 1 },
+                    { 11, new DateTime(2019, 6, 4, 19, 30, 0, 0, DateTimeKind.Unspecified), "Elmington Park", 2, 4, 7, 1 },
+                    { 12, new DateTime(2019, 6, 6, 19, 30, 0, 0, DateTimeKind.Unspecified), "West Park", 2, 5, 8, 4 },
+                    { 13, new DateTime(2019, 5, 21, 19, 45, 0, 0, DateTimeKind.Unspecified), "Elmington Park", 3, 0, 4, 2 },
+                    { 14, new DateTime(2019, 5, 26, 19, 45, 0, 0, DateTimeKind.Unspecified), "West Park", 3, 1, 5, 2 },
+                    { 9, new DateTime(2019, 5, 28, 19, 30, 0, 0, DateTimeKind.Unspecified), "Elmington Park", 2, 4, 5, 3 },
+                    { 15, new DateTime(2019, 5, 28, 19, 45, 0, 0, DateTimeKind.Unspecified), "Elmington Park", 3, 4, 6, 2 }
                 });
 
             migrationBuilder.InsertData(
@@ -246,10 +283,10 @@ namespace LeagueDash.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { 5, "Forward" },
                     { 4, "Midfielder" },
-                    { 1, "No Preference" },
+                    { 5, "Forward" },
                     { 2, "Goalkeeper" },
+                    { 1, "No Preference" },
                     { 3, "Defender" }
                 });
 
@@ -268,16 +305,16 @@ namespace LeagueDash.Migrations
                 columns: new[] { "Id", "CaptainId", "DateCreated", "Name" },
                 values: new object[,]
                 {
-                    { 9, "0a045a11-593d-421c-b073-415a6b0a7ab0", new DateTime(2019, 5, 13, 9, 53, 41, 942, DateTimeKind.Local).AddTicks(6817), "Tornadoes" },
-                    { 1, "53f1ba03-0ee6-48ca-89ff-eee142296415", new DateTime(2019, 5, 13, 9, 53, 41, 940, DateTimeKind.Local).AddTicks(4905), "Nashville SC" },
-                    { 2, "1d72818d-8976-44ce-93a7-f47f9feea63d", new DateTime(2019, 5, 13, 9, 53, 41, 942, DateTimeKind.Local).AddTicks(6782), "Junior Wombats" },
-                    { 3, "8f266432-cb10-486b-97c8-8fe339426109", new DateTime(2019, 5, 13, 9, 53, 41, 942, DateTimeKind.Local).AddTicks(6792), "Salty Pirates" },
-                    { 4, "0b8b3a0c-fbd9-491e-a8c4-f400e0e0a121", new DateTime(2019, 5, 13, 9, 53, 41, 942, DateTimeKind.Local).AddTicks(6796), "Earth's Mightiest Heroes" },
-                    { 5, "6186e7db-c20e-4184-afda-d7acda1b38c7", new DateTime(2019, 5, 13, 9, 53, 41, 942, DateTimeKind.Local).AddTicks(6803), "The New Avengers" },
-                    { 6, "62b2147b-c2f2-48de-89e6-6aed4050737f", new DateTime(2019, 5, 13, 9, 53, 41, 942, DateTimeKind.Local).AddTicks(6806), "101st Airborne" },
-                    { 7, "0b05f2d7-41aa-4ee1-a41c-dac43dfdb87b", new DateTime(2019, 5, 13, 9, 53, 41, 942, DateTimeKind.Local).AddTicks(6810), "Space Invaders" },
-                    { 8, "114fa0b1-9ac0-443c-b9c2-c8c97d44cf31", new DateTime(2019, 5, 13, 9, 53, 41, 942, DateTimeKind.Local).AddTicks(6813), "Red October" },
-                    { 10, "e5a76361-c5f6-4ba1-a097-fd15b1eff8a4", new DateTime(2019, 5, 13, 9, 53, 41, 942, DateTimeKind.Local).AddTicks(6820), "Predators" }
+                    { 6, "ec515133-6e28-438f-a93c-d8d3bd897b34", new DateTime(2019, 5, 14, 14, 52, 40, 953, DateTimeKind.Local).AddTicks(1981), "101st Airborne" },
+                    { 8, "e8a990f7-f7eb-402b-a751-032f589f151b", new DateTime(2019, 5, 14, 14, 52, 40, 953, DateTimeKind.Local).AddTicks(1988), "Red October" },
+                    { 7, "643f61f2-e472-4286-85a1-d0745e3acd3d", new DateTime(2019, 5, 14, 14, 52, 40, 953, DateTimeKind.Local).AddTicks(1984), "Space Invaders" },
+                    { 5, "de01d5f4-de08-4b1d-bd03-0f0b3ead376b", new DateTime(2019, 5, 14, 14, 52, 40, 953, DateTimeKind.Local).AddTicks(1977), "The New Avengers" },
+                    { 9, "75fb5fe3-0eef-4642-b893-fca05d421344", new DateTime(2019, 5, 14, 14, 52, 40, 953, DateTimeKind.Local).AddTicks(1995), "Tornadoes" },
+                    { 3, "0a2fa575-0739-4ee6-a797-83370a17b615", new DateTime(2019, 5, 14, 14, 52, 40, 953, DateTimeKind.Local).AddTicks(1970), "Salty Pirates" },
+                    { 2, "80e593ff-b140-40cb-9947-916ff58a9e4f", new DateTime(2019, 5, 14, 14, 52, 40, 953, DateTimeKind.Local).AddTicks(1953), "Junior Wombats" },
+                    { 1, "0251cc8d-baaa-4aa6-ba92-1c95d6377770", new DateTime(2019, 5, 14, 14, 52, 40, 949, DateTimeKind.Local).AddTicks(6582), "Nashville SC" },
+                    { 4, "ffe39243-ed2a-4531-a1d4-7d87adcd9461", new DateTime(2019, 5, 14, 14, 52, 40, 953, DateTimeKind.Local).AddTicks(1974), "Earth's Mightiest Heroes" },
+                    { 10, "32a6205f-51d6-4d5e-b34d-5b3d8aea546f", new DateTime(2019, 5, 14, 14, 52, 40, 953, DateTimeKind.Local).AddTicks(1998), "Predators" }
                 });
 
             migrationBuilder.CreateIndex(

@@ -31,13 +31,14 @@ namespace LeagueDash.Controllers
 
         // GET: Teams
         [Authorize]
+        [Route("Standings")]
         public async Task<IActionResult> Index()
         {
             var currentUser = await GetCurrentUserAsync();
 
             TeamListViewModel viewModel = new TeamListViewModel();
 
-            viewModel.CurrentUserRoleId = currentUser.RoleId;
+            viewModel.CurrentUser = currentUser;
             viewModel.TeamList = await (
                 from t in _context.Team
                 join au in _context.ApplicationUsers on t.CaptainId equals au.Id into sub
@@ -247,6 +248,17 @@ namespace LeagueDash.Controllers
         {
             var team = await _context.Team.FindAsync(id);
             _context.Team.Remove(team);
+            var teamPlayers = await _context.ApplicationUsers.Where(p => p.TeamId == team.Id).ToListAsync();  
+            foreach (ApplicationUser p in teamPlayers)
+            {
+                p.TeamId = null;
+                _context.ApplicationUsers.Update(p);
+            };
+            var teamGames = await _context.Game.Where(g => g.TeamAId == team.Id || g.TeamBId == team.Id).ToListAsync();
+            foreach (Game g in teamGames)
+            {
+                _context.Game.Remove(g);
+            };
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

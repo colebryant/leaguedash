@@ -84,9 +84,9 @@ namespace LeagueDash.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "5061754a-5d88-4e46-a8ac-62f4434af4ed",
+                            Id = "ce96ae73-4dc3-4bed-bd0b-de0668220618",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d8001a2b-982f-43d3-988b-c8f513b4ede3",
+                            ConcurrencyStamp = "bbcc79d4-ad38-4a49-9dce-daca9c88139d",
                             Email = "rodger@rodger.com",
                             EmailConfirmed = true,
                             FirstName = "Rodger",
@@ -94,19 +94,19 @@ namespace LeagueDash.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "RODGER@RODGER.COM",
                             NormalizedUserName = "RODGER@RODGER.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEMojExUgT82Sawpwveu6LLFuEpNJxX4iUBu77tG5nPuyvouw3wm+xvL1EDy5K0iJWA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIQTrzNd9smYjFpywJt8HLpLuxMXDoXiCQXFi82Onay4wdC/y866tXRfREw8poEUZg==",
                             PhoneNumberConfirmed = false,
                             PositionId = 1,
                             RoleId = 3,
-                            SecurityStamp = "b8eef87f-e160-425f-9d50-73170ecd9bcc",
+                            SecurityStamp = "97704b3d-6c68-495f-9b6b-3ef1b0f176f6",
                             TwoFactorEnabled = false,
                             UserName = "rodger@rodger.com"
                         },
                         new
                         {
-                            Id = "53f1ba03-0ee6-48ca-89ff-eee142296415",
+                            Id = "0251cc8d-baaa-4aa6-ba92-1c95d6377770",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9fd5d7d0-16db-4751-a308-114efa4ed5e0",
+                            ConcurrencyStamp = "66aa342f-7986-493c-b1a8-c13930e29e8c",
                             Email = "will@will.com",
                             EmailConfirmed = true,
                             FirstName = "Will",
@@ -114,20 +114,20 @@ namespace LeagueDash.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "WILL@WILL.COM",
                             NormalizedUserName = "WILL@WILL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIOjZUleFWFkDhpDJ4InlDpcOFZDK7GgIa58DR5HguI5QuZWfMpWrQ0pqPDD4cyp3Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAzkmB0bHPdifp5wLU83M9zCzwjmaKBb5PRqUfDBKKxoZ1J83t3dFg5jK8BB+ewF3g==",
                             PhoneNumberConfirmed = false,
                             PositionId = 2,
                             RoleId = 2,
-                            SecurityStamp = "4461f143-d609-4254-8947-4997cdd4d419",
+                            SecurityStamp = "ee7ac600-2647-445e-a296-7d8760baa085",
                             TeamId = 1,
                             TwoFactorEnabled = false,
                             UserName = "will@will.com"
                         },
                         new
                         {
-                            Id = "44b7cbc1-f848-41bb-a6de-ab19bd985895",
+                            Id = "fe134dea-dd8e-4c07-9201-4472a6409ac7",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "12079da0-69fd-41b5-916e-30d13a46bd85",
+                            ConcurrencyStamp = "ba9aef42-1e76-47bb-9515-e82900cff2aa",
                             Email = "julia@julia.com",
                             EmailConfirmed = true,
                             FirstName = "Julia",
@@ -135,19 +135,19 @@ namespace LeagueDash.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "JULIA@JULIA.COM",
                             NormalizedUserName = "JULIA@JULIA.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEB76m4J60GnsTa+gUUXfUlT5bR1rn51DBYgnd5TYtdLSpq1zvHLoPZYOLnm0AiqL2A==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIECs/xxltFYOToFhHAgnDMy8tZCmhVgot8EC+tM1IfjcK4BT2lFO+sfVeT6ZfxbCg==",
                             PhoneNumberConfirmed = false,
                             PositionId = 5,
                             RoleId = 1,
-                            SecurityStamp = "debca76a-21c1-453a-a683-728cb6eb945d",
+                            SecurityStamp = "b84beed6-2563-41ec-96a4-49008c939e49",
                             TwoFactorEnabled = false,
                             UserName = "julia@julia.com"
                         },
                         new
                         {
-                            Id = "39523271-c006-46a0-bc53-e531322d0500",
+                            Id = "462ced06-6c69-45ab-ae3d-36c31bc6ab86",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "3c92e065-6460-4d38-b2ac-4ea0266c7c4e",
+                            ConcurrencyStamp = "4e7908cf-6fd2-4bda-90bb-88d69efa1ab7",
                             Email = "lionel@lionel.com",
                             EmailConfirmed = true,
                             FirstName = "Lionel",
@@ -155,19 +155,19 @@ namespace LeagueDash.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "LIONEL@LIONEL.COM",
                             NormalizedUserName = "LIONEL@LIONEL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAENp38dt4KLPKzc/bmVLg1wkvxFHANN1vdgZTyZF07coIcZGNGk3wAUBK4/omWoYazw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHN6Yi9WIZrzw49mI5C4SbXafCVCY84yXKT2YLp2K9rVPaSkyspA0aeVS9xkZCcIyA==",
                             PhoneNumberConfirmed = false,
                             PositionId = 5,
                             RoleId = 1,
-                            SecurityStamp = "5c076caf-ec3e-4b44-af12-572827b34eab",
+                            SecurityStamp = "9e89fe99-c83b-4910-bce1-d4cb7c445efe",
                             TwoFactorEnabled = false,
                             UserName = "lionel@lionel.com"
                         },
                         new
                         {
-                            Id = "2fa67c53-605b-4889-a3af-b1d00c5070ec",
+                            Id = "1d743f4e-fbf6-427b-8382-d545e070c959",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1d95a438-83bb-4424-b6e3-2b54833ad9ce",
+                            ConcurrencyStamp = "4816e40a-7930-4380-9dd5-c7ef39abeea8",
                             Email = "cristiano@cristiano.com",
                             EmailConfirmed = true,
                             FirstName = "Cristiano",
@@ -175,19 +175,19 @@ namespace LeagueDash.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "CRISTIANO@CRISTIANO.COM",
                             NormalizedUserName = "CRISTIANO@CRISTIANO.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEKDDzBBmniOgQ4BPwfZieoqdInI+cNriC0frN2PEipCULH9ienCPQgbQvm/KNEzlxg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAENRUVVKXA5Ya3KL9RreVcKXHAKAEs0FbfRqawmwzLtP5i2Q7AYLGDnuJyQMeM3Skhg==",
                             PhoneNumberConfirmed = false,
                             PositionId = 4,
                             RoleId = 1,
-                            SecurityStamp = "4722bff1-3527-4990-b3b4-d7918db46b30",
+                            SecurityStamp = "76f54498-4632-4f63-81db-e953dd3809b1",
                             TwoFactorEnabled = false,
                             UserName = "cristiano@cristiano.com"
                         },
                         new
                         {
-                            Id = "98a0d6f6-17d6-44ed-8c00-5bc71cd8bcb0",
+                            Id = "d86ee9dd-418e-4f2e-9e37-8df4b14f19ee",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "bbfcf0ee-1f42-4527-9529-946c3fec336b",
+                            ConcurrencyStamp = "68fff582-0c1b-46e7-8d43-22e0e188f98b",
                             Email = "sergio@sergio.com",
                             EmailConfirmed = true,
                             FirstName = "Sergio",
@@ -195,19 +195,19 @@ namespace LeagueDash.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "SERGIO@SERGIO.COM",
                             NormalizedUserName = "SERGIO@SERGIO.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBaQ0aTOXrEUAgyVTwHkqZQcvvMpRQkOsLRv9Wk3e7oUS8qW5SPRZlngb/LbWhUWqQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMh1I4MP8lhTr4ZYn6MyoschqnmxiCB0BvZiic0Byi11hGwMPfpgHwVqBKOOtsFIiA==",
                             PhoneNumberConfirmed = false,
                             PositionId = 3,
                             RoleId = 1,
-                            SecurityStamp = "df49187a-d6d2-4d44-9698-cf042a3913df",
+                            SecurityStamp = "dc627198-d9a3-4de0-adf7-f14a465cb082",
                             TwoFactorEnabled = false,
                             UserName = "sergio@sergio.com"
                         },
                         new
                         {
-                            Id = "c9b5a564-eb31-49b5-8e91-7f2adbf56d80",
+                            Id = "e189db7b-2e13-453a-a5ea-b12d55f1054f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "35bd07ed-195e-4176-b6a8-79024b687673",
+                            ConcurrencyStamp = "64864092-35db-445b-9a68-d812a3d62275",
                             Email = "thomas@thomas.com",
                             EmailConfirmed = true,
                             FirstName = "Thomas",
@@ -215,19 +215,19 @@ namespace LeagueDash.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "THOMAS@THOMAS.COM",
                             NormalizedUserName = "THOMAS@THOMAS.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJy0EBIcXjHBQQ2KSYS1Aejg/RCaTSwXXL/gvZSnjAxtNsQDzJrzKcQ8LP2gIcz73A==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJtH79JSpiZB4m898uiFBRDQ8M+5O8PsPzA15QIt9wPPFUUYRxLGs0w29thDKNt+Pw==",
                             PhoneNumberConfirmed = false,
                             PositionId = 4,
                             RoleId = 1,
-                            SecurityStamp = "ee022a3a-82f3-4598-ba52-59ffbd31da91",
+                            SecurityStamp = "0c2c2b09-6cd0-45f2-b9dd-ee82fb652ff3",
                             TwoFactorEnabled = false,
                             UserName = "thomas@thomas.com"
                         },
                         new
                         {
-                            Id = "82b1ff03-eb79-4527-9811-b7993160af3e",
+                            Id = "5af0f2e1-71f3-484d-a517-aeba23c97473",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d5fefc13-d51d-4d65-928b-06adfa03ef0d",
+                            ConcurrencyStamp = "f7727abd-680d-46a0-8c6c-2aa075f0cae9",
                             Email = "bastion@bastion.com",
                             EmailConfirmed = true,
                             FirstName = "Bastion",
@@ -235,19 +235,19 @@ namespace LeagueDash.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "BASTION@BASTION.COM",
                             NormalizedUserName = "BASTION@BASTION.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEA/tgqsUHKnY4Mrdy5UewugtEObJ96osbnGUci4Jj5UQJpDgdHXaMB6CwOKYTcN1Yg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEOoxqi7Ox7L1Ol4+t71K/d439TnkdKsVMLYvBdHTdTnmfRIRxrlvnfGmUhF9PL6ybw==",
                             PhoneNumberConfirmed = false,
                             PositionId = 4,
                             RoleId = 1,
-                            SecurityStamp = "f8c39ead-3f56-4c6b-913d-67db2f524346",
+                            SecurityStamp = "828419d6-4e70-4d81-9335-a57372a238e8",
                             TwoFactorEnabled = false,
                             UserName = "bastion@bastion.com"
                         },
                         new
                         {
-                            Id = "1d72818d-8976-44ce-93a7-f47f9feea63d",
+                            Id = "80e593ff-b140-40cb-9947-916ff58a9e4f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "3be19c49-de9f-4352-a894-347414bff2ba",
+                            ConcurrencyStamp = "d2ea1d7d-287e-4a9d-a524-6af7320ea476",
                             Email = "billy@billy.com",
                             EmailConfirmed = true,
                             FirstName = "Billy",
@@ -255,20 +255,20 @@ namespace LeagueDash.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "BILLY@BILLY.COM",
                             NormalizedUserName = "BILLY@BILLY.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEGihmQrhz4CsJ494S38JVO2Fsm3A1WavIi/HO1977Iux0QnR+RGX2yAcf7CYjy5IwQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAENrysqC6HVwv3buGvj7QAhD44NStes94i4YcDMOaQMydoX4U0H/+zOqbdNEVunBRdQ==",
                             PhoneNumberConfirmed = false,
                             PositionId = 2,
                             RoleId = 2,
-                            SecurityStamp = "46e0c5bb-0fc1-481a-b49a-99a35806601a",
+                            SecurityStamp = "e892b0ca-5fb5-4f4d-bef4-ff5603440125",
                             TeamId = 2,
                             TwoFactorEnabled = false,
                             UserName = "billy@billy.com"
                         },
                         new
                         {
-                            Id = "8f266432-cb10-486b-97c8-8fe339426109",
+                            Id = "0a2fa575-0739-4ee6-a797-83370a17b615",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "50f8095f-7cc9-4e14-b5fb-9aecc96b7701",
+                            ConcurrencyStamp = "caf2acbc-ad46-456f-b125-513edfaa3f6d",
                             Email = "jack@jack.com",
                             EmailConfirmed = true,
                             FirstName = "Jack",
@@ -276,20 +276,20 @@ namespace LeagueDash.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "JACK@JACK.COM",
                             NormalizedUserName = "JACK@JACK.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIYYsI7U8SXOT6sg63qjpAYtwLRuI7qXySEclcS9WA/F0yhI4jdgA7V6i3YFdPVCnw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAECBEeEcR9R+4iiI609xyhi0Lk4Wb7ek7Ou4wG38A5IDpU0NNyIkhNql4DYr0+oJTJg==",
                             PhoneNumberConfirmed = false,
                             PositionId = 5,
                             RoleId = 2,
-                            SecurityStamp = "f4f2c07f-d0b2-463d-9c7a-574733b17bdc",
+                            SecurityStamp = "1b8ee3d2-bdf5-4d4a-8815-543ec6db9ab4",
                             TeamId = 3,
                             TwoFactorEnabled = false,
                             UserName = "jack@jack.com"
                         },
                         new
                         {
-                            Id = "0b8b3a0c-fbd9-491e-a8c4-f400e0e0a121",
+                            Id = "ffe39243-ed2a-4531-a1d4-7d87adcd9461",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "29121ba3-6c02-4620-80a2-c158b35db0d2",
+                            ConcurrencyStamp = "0314a599-5773-4cff-b4be-645c2740b067",
                             Email = "steve@steve.com",
                             EmailConfirmed = true,
                             FirstName = "Steve",
@@ -297,20 +297,20 @@ namespace LeagueDash.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "STEVE@STEVE.COM",
                             NormalizedUserName = "STEVE@STEVE.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEGS18QhxZdiJfagAMzF7CyrvJcd25vZOxkGv63WrS4yaPbPor45NnGxDJO38atsEWA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEKJ/LB+CSKgDL1Bg+jykwv0FfKY3TFziEtXpQNFqOdbDuT5pOKvyB0K/RXELgEpsQ==",
                             PhoneNumberConfirmed = false,
                             PositionId = 4,
                             RoleId = 2,
-                            SecurityStamp = "dfac3e70-df55-46e2-b833-cfd1bb54c19d",
+                            SecurityStamp = "76afa8cc-dcdf-484d-8f9a-353ac38e1b44",
                             TeamId = 4,
                             TwoFactorEnabled = false,
                             UserName = "steve@steve.com"
                         },
                         new
                         {
-                            Id = "6186e7db-c20e-4184-afda-d7acda1b38c7",
+                            Id = "de01d5f4-de08-4b1d-bd03-0f0b3ead376b",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a4e2e87f-85b5-4a0d-a961-94feffe0fb2f",
+                            ConcurrencyStamp = "91924fca-5003-4d3c-bbec-51f5d4ad7a8b",
                             Email = "carol@carol.com",
                             EmailConfirmed = true,
                             FirstName = "Carol",
@@ -318,20 +318,20 @@ namespace LeagueDash.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "CAROL@CAROL.COM",
                             NormalizedUserName = "CAROL@CAROL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEN4SQTaFmA8/pSB3xYCC2zMgmeBjGH+X6dUmUNPomkzmJomFHTyed1ngX0snXWwqoA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJJAoAZv4Mj/X7+qDEHepzJmX2lxA8CWBwYKnM8fWk/v0CL6w67cDqknpwrxrjUE6g==",
                             PhoneNumberConfirmed = false,
                             PositionId = 5,
                             RoleId = 2,
-                            SecurityStamp = "aeda91fb-8f10-4493-996c-84b5fc7325d7",
+                            SecurityStamp = "222ea9dc-6354-4cb7-a5ce-73de726b1740",
                             TeamId = 5,
                             TwoFactorEnabled = false,
                             UserName = "carol@carol.com"
                         },
                         new
                         {
-                            Id = "62b2147b-c2f2-48de-89e6-6aed4050737f",
+                            Id = "ec515133-6e28-438f-a93c-d8d3bd897b34",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b30da9e4-7bb2-4c1d-92b1-d15b677c2ca4",
+                            ConcurrencyStamp = "32669fa1-91f0-4bd0-827d-ca1f0b01f524",
                             Email = "john@john.com",
                             EmailConfirmed = true,
                             FirstName = "John",
@@ -339,20 +339,20 @@ namespace LeagueDash.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "JOHN@JOHN.COM",
                             NormalizedUserName = "JOHN@JOHN.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEE69b1hC5Jf8rGo3xdR06opS9yMjE0v6rVHD34DwUkWNB8aBypOFU6nBLuhP7LSCCQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAENAivw+W3u/gftro/h56wd4l85zqCPI1iu7g3dMHPC0xetOqGiD8QJdvy72nNVND8A==",
                             PhoneNumberConfirmed = false,
                             PositionId = 3,
                             RoleId = 2,
-                            SecurityStamp = "3bf008a8-8561-41cb-b33c-a22d08ebaac9",
+                            SecurityStamp = "058fb48c-a80c-4904-b3e2-493a431ba305",
                             TeamId = 6,
                             TwoFactorEnabled = false,
                             UserName = "john@john.com"
                         },
                         new
                         {
-                            Id = "0b05f2d7-41aa-4ee1-a41c-dac43dfdb87b",
+                            Id = "643f61f2-e472-4286-85a1-d0745e3acd3d",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d9a5f173-120e-46d3-ba41-59656aa784c9",
+                            ConcurrencyStamp = "13d41d76-2af0-4e70-96cb-b626e2e4157e",
                             Email = "james@james.com",
                             EmailConfirmed = true,
                             FirstName = "James",
@@ -360,20 +360,20 @@ namespace LeagueDash.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "JAMES@JAMES.COM",
                             NormalizedUserName = "JAMES@JAMES.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEGpVke1xhMi/PRfUcHQbvaVbNjKh+uzxIn1avVTEVptXk5a0MwNe/C1cqtaos44ydg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAELZUrs+Zr2VCv0nU/oGc82NVZaIoZ1kz/UmyaKm/DFTzJ9SzGCQCREIfk6G6WXxX9Q==",
                             PhoneNumberConfirmed = false,
                             PositionId = 3,
                             RoleId = 2,
-                            SecurityStamp = "25f2b386-7147-49eb-862d-fe6c840b0812",
+                            SecurityStamp = "e5d6144b-400e-4470-85c6-0469374bd66c",
                             TeamId = 7,
                             TwoFactorEnabled = false,
                             UserName = "james@james.com"
                         },
                         new
                         {
-                            Id = "114fa0b1-9ac0-443c-b9c2-c8c97d44cf31",
+                            Id = "e8a990f7-f7eb-402b-a751-032f589f151b",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5b4d933c-8d12-4be6-9cff-89f514ed2996",
+                            ConcurrencyStamp = "3b290183-4edb-4d35-a107-738e622954d5",
                             Email = "marko@marko.com",
                             EmailConfirmed = true,
                             FirstName = "Marko",
@@ -381,20 +381,20 @@ namespace LeagueDash.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "MARKO@MARKO.COM",
                             NormalizedUserName = "MARKO@MARKO.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEAT0cWz1nOKfTkvZDoUuhHjyOfq1XneIE5o3AOYZCaSdxlAuFwG8fWb95ntjakmXPQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEKEHts1jAgH1T2TsB1SNJdNfuzooakUbKDXIQMDk+v3rUhpNkd4yGDfGUNEwoQfxYw==",
                             PhoneNumberConfirmed = false,
                             PositionId = 2,
                             RoleId = 2,
-                            SecurityStamp = "5b2ff256-bef7-4bd5-9365-bb3055158958",
+                            SecurityStamp = "cd4e9cc6-c391-4205-9637-9767861e7327",
                             TeamId = 8,
                             TwoFactorEnabled = false,
                             UserName = "marko@marko.com"
                         },
                         new
                         {
-                            Id = "0a045a11-593d-421c-b073-415a6b0a7ab0",
+                            Id = "75fb5fe3-0eef-4642-b893-fca05d421344",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "985c4af2-84d9-4e89-a5bd-e086367f6bde",
+                            ConcurrencyStamp = "fa084057-1462-4369-87aa-a1af51e8850d",
                             Email = "terry@teryy.com",
                             EmailConfirmed = true,
                             FirstName = "Terry",
@@ -402,20 +402,20 @@ namespace LeagueDash.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "TERRY@TERRY.COM",
                             NormalizedUserName = "TERRY@TERYY.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEO098INs0gJ1jO7kUKKCIFsOKP/DqX2QXmWYtMeuSbH4Lh0UfNef1GNt+yUeGSvY/w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEI4/MzAKJYY/TfTPEL8VAJdR924VJnhCh+qenhoCwaLHFNLe2LAQ5bDfGK05Eautog==",
                             PhoneNumberConfirmed = false,
                             PositionId = 1,
                             RoleId = 2,
-                            SecurityStamp = "0e5ab7c1-56a9-4502-9420-27aff0d19e81",
+                            SecurityStamp = "264073a7-13c6-4334-88b8-6ca2578f13e7",
                             TeamId = 9,
                             TwoFactorEnabled = false,
                             UserName = "terry@terry.com"
                         },
                         new
                         {
-                            Id = "e5a76361-c5f6-4ba1-a097-fd15b1eff8a4",
+                            Id = "32a6205f-51d6-4d5e-b34d-5b3d8aea546f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c4f35365-ce41-48a6-979a-8fa4c9848371",
+                            ConcurrencyStamp = "9ff6ec08-209b-4a47-9461-e56fe7f6dd3a",
                             Email = "juan@juan.com",
                             EmailConfirmed = true,
                             FirstName = "Juan",
@@ -423,11 +423,11 @@ namespace LeagueDash.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "JUAN@JUAN.COM",
                             NormalizedUserName = "JUAN@JUAN.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHzRUkLjFvbfcTfPDkXInVgFkl8WdNqmbl14YQxO6ZdI7ltG0KmQ5yKnBtVDwXFQXw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEASdfmL/03uL105qlZdmknXENGNLGcZlvzyBZckUb+iQfiKiEHU7WKrVJruWOI7R2Q==",
                             PhoneNumberConfirmed = false,
                             PositionId = 1,
                             RoleId = 2,
-                            SecurityStamp = "e5ce20ae-b34c-4437-865e-92fdd39696c1",
+                            SecurityStamp = "030454b8-95c4-4086-884d-de1da2a457c0",
                             TeamId = 10,
                             TwoFactorEnabled = false,
                             UserName = "juan@juan.com"
@@ -458,6 +458,308 @@ namespace LeagueDash.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Game");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            GameTime = new DateTime(2019, 5, 21, 19, 15, 0, 0, DateTimeKind.Unspecified),
+                            Location = "Elmington Park",
+                            TeamAId = 1,
+                            TeamAScore = 4,
+                            TeamBId = 2,
+                            TeamBScore = 3
+                        },
+                        new
+                        {
+                            Id = 2,
+                            GameTime = new DateTime(2019, 5, 26, 19, 15, 0, 0, DateTimeKind.Unspecified),
+                            Location = "West Park",
+                            TeamAId = 1,
+                            TeamAScore = 2,
+                            TeamBId = 3,
+                            TeamBScore = 0
+                        },
+                        new
+                        {
+                            Id = 3,
+                            GameTime = new DateTime(2019, 5, 28, 19, 15, 0, 0, DateTimeKind.Unspecified),
+                            Location = "Elmington Park",
+                            TeamAId = 1,
+                            TeamAScore = 5,
+                            TeamBId = 4,
+                            TeamBScore = 3
+                        },
+                        new
+                        {
+                            Id = 4,
+                            GameTime = new DateTime(2019, 5, 30, 19, 15, 0, 0, DateTimeKind.Unspecified),
+                            Location = "West Park",
+                            TeamAId = 1,
+                            TeamAScore = 2,
+                            TeamBId = 5,
+                            TeamBScore = 1
+                        },
+                        new
+                        {
+                            Id = 5,
+                            GameTime = new DateTime(2019, 6, 4, 19, 15, 0, 0, DateTimeKind.Unspecified),
+                            Location = "Elmington Park",
+                            TeamAId = 1,
+                            TeamAScore = 4,
+                            TeamBId = 6,
+                            TeamBScore = 1
+                        },
+                        new
+                        {
+                            Id = 6,
+                            GameTime = new DateTime(2019, 6, 6, 19, 15, 0, 0, DateTimeKind.Unspecified),
+                            Location = "West Park",
+                            TeamAId = 1,
+                            TeamAScore = 5,
+                            TeamBId = 7,
+                            TeamBScore = 4
+                        },
+                        new
+                        {
+                            Id = 7,
+                            GameTime = new DateTime(2019, 5, 21, 19, 30, 0, 0, DateTimeKind.Unspecified),
+                            Location = "Elmington Park",
+                            TeamAId = 2,
+                            TeamAScore = 4,
+                            TeamBId = 3,
+                            TeamBScore = 3
+                        },
+                        new
+                        {
+                            Id = 8,
+                            GameTime = new DateTime(2019, 5, 26, 19, 30, 0, 0, DateTimeKind.Unspecified),
+                            Location = "West Park",
+                            TeamAId = 2,
+                            TeamAScore = 1,
+                            TeamBId = 4,
+                            TeamBScore = 2
+                        },
+                        new
+                        {
+                            Id = 9,
+                            GameTime = new DateTime(2019, 5, 28, 19, 30, 0, 0, DateTimeKind.Unspecified),
+                            Location = "Elmington Park",
+                            TeamAId = 2,
+                            TeamAScore = 4,
+                            TeamBId = 5,
+                            TeamBScore = 3
+                        },
+                        new
+                        {
+                            Id = 10,
+                            GameTime = new DateTime(2019, 5, 30, 19, 30, 0, 0, DateTimeKind.Unspecified),
+                            Location = "West Park",
+                            TeamAId = 2,
+                            TeamAScore = 2,
+                            TeamBId = 6,
+                            TeamBScore = 1
+                        },
+                        new
+                        {
+                            Id = 11,
+                            GameTime = new DateTime(2019, 6, 4, 19, 30, 0, 0, DateTimeKind.Unspecified),
+                            Location = "Elmington Park",
+                            TeamAId = 2,
+                            TeamAScore = 4,
+                            TeamBId = 7,
+                            TeamBScore = 1
+                        },
+                        new
+                        {
+                            Id = 12,
+                            GameTime = new DateTime(2019, 6, 6, 19, 30, 0, 0, DateTimeKind.Unspecified),
+                            Location = "West Park",
+                            TeamAId = 2,
+                            TeamAScore = 5,
+                            TeamBId = 8,
+                            TeamBScore = 4
+                        },
+                        new
+                        {
+                            Id = 13,
+                            GameTime = new DateTime(2019, 5, 21, 19, 45, 0, 0, DateTimeKind.Unspecified),
+                            Location = "Elmington Park",
+                            TeamAId = 3,
+                            TeamAScore = 0,
+                            TeamBId = 4,
+                            TeamBScore = 2
+                        },
+                        new
+                        {
+                            Id = 14,
+                            GameTime = new DateTime(2019, 5, 26, 19, 45, 0, 0, DateTimeKind.Unspecified),
+                            Location = "West Park",
+                            TeamAId = 3,
+                            TeamAScore = 1,
+                            TeamBId = 5,
+                            TeamBScore = 2
+                        },
+                        new
+                        {
+                            Id = 15,
+                            GameTime = new DateTime(2019, 5, 28, 19, 45, 0, 0, DateTimeKind.Unspecified),
+                            Location = "Elmington Park",
+                            TeamAId = 3,
+                            TeamAScore = 4,
+                            TeamBId = 6,
+                            TeamBScore = 2
+                        },
+                        new
+                        {
+                            Id = 16,
+                            GameTime = new DateTime(2019, 5, 30, 19, 45, 0, 0, DateTimeKind.Unspecified),
+                            Location = "West Park",
+                            TeamAId = 3,
+                            TeamAScore = 2,
+                            TeamBId = 7,
+                            TeamBScore = 1
+                        },
+                        new
+                        {
+                            Id = 17,
+                            GameTime = new DateTime(2019, 6, 4, 19, 45, 0, 0, DateTimeKind.Unspecified),
+                            Location = "Elmington Park",
+                            TeamAId = 3,
+                            TeamAScore = 4,
+                            TeamBId = 8,
+                            TeamBScore = 1
+                        },
+                        new
+                        {
+                            Id = 18,
+                            GameTime = new DateTime(2019, 6, 6, 19, 45, 0, 0, DateTimeKind.Unspecified),
+                            Location = "West Park",
+                            TeamAId = 3,
+                            TeamAScore = 5,
+                            TeamBId = 9,
+                            TeamBScore = 2
+                        },
+                        new
+                        {
+                            Id = 19,
+                            GameTime = new DateTime(2019, 5, 21, 19, 15, 0, 0, DateTimeKind.Unspecified),
+                            Location = "Elmington Park",
+                            TeamAId = 4,
+                            TeamAScore = 7,
+                            TeamBId = 5,
+                            TeamBScore = 2
+                        },
+                        new
+                        {
+                            Id = 20,
+                            GameTime = new DateTime(2019, 5, 26, 19, 15, 0, 0, DateTimeKind.Unspecified),
+                            Location = "West Park",
+                            TeamAId = 4,
+                            TeamAScore = 5,
+                            TeamBId = 6,
+                            TeamBScore = 6
+                        },
+                        new
+                        {
+                            Id = 21,
+                            GameTime = new DateTime(2019, 5, 28, 19, 15, 0, 0, DateTimeKind.Unspecified),
+                            Location = "Elmington Park",
+                            TeamAId = 4,
+                            TeamAScore = 4,
+                            TeamBId = 7,
+                            TeamBScore = 4
+                        },
+                        new
+                        {
+                            Id = 22,
+                            GameTime = new DateTime(2019, 5, 30, 19, 15, 0, 0, DateTimeKind.Unspecified),
+                            Location = "West Park",
+                            TeamAId = 4,
+                            TeamAScore = 1,
+                            TeamBId = 8,
+                            TeamBScore = 2
+                        },
+                        new
+                        {
+                            Id = 23,
+                            GameTime = new DateTime(2019, 6, 4, 19, 15, 0, 0, DateTimeKind.Unspecified),
+                            Location = "Elmington Park",
+                            TeamAId = 4,
+                            TeamAScore = 2,
+                            TeamBId = 9,
+                            TeamBScore = 1
+                        },
+                        new
+                        {
+                            Id = 24,
+                            GameTime = new DateTime(2019, 6, 6, 19, 15, 0, 0, DateTimeKind.Unspecified),
+                            Location = "West Park",
+                            TeamAId = 4,
+                            TeamAScore = 4,
+                            TeamBId = 10,
+                            TeamBScore = 2
+                        },
+                        new
+                        {
+                            Id = 25,
+                            GameTime = new DateTime(2019, 5, 21, 19, 30, 0, 0, DateTimeKind.Unspecified),
+                            Location = "Elmington Park",
+                            TeamAId = 5,
+                            TeamAScore = 3,
+                            TeamBId = 6,
+                            TeamBScore = 2
+                        },
+                        new
+                        {
+                            Id = 26,
+                            GameTime = new DateTime(2019, 5, 26, 19, 30, 0, 0, DateTimeKind.Unspecified),
+                            Location = "West Park",
+                            TeamAId = 5,
+                            TeamAScore = 5,
+                            TeamBId = 7,
+                            TeamBScore = 2
+                        },
+                        new
+                        {
+                            Id = 27,
+                            GameTime = new DateTime(2019, 5, 28, 19, 30, 0, 0, DateTimeKind.Unspecified),
+                            Location = "Elmington Park",
+                            TeamAId = 5,
+                            TeamAScore = 2,
+                            TeamBId = 8,
+                            TeamBScore = 5
+                        },
+                        new
+                        {
+                            Id = 28,
+                            GameTime = new DateTime(2019, 5, 30, 19, 30, 0, 0, DateTimeKind.Unspecified),
+                            Location = "West Park",
+                            TeamAId = 5,
+                            TeamAScore = 2,
+                            TeamBId = 9,
+                            TeamBScore = 2
+                        },
+                        new
+                        {
+                            Id = 29,
+                            GameTime = new DateTime(2019, 6, 4, 19, 30, 0, 0, DateTimeKind.Unspecified),
+                            Location = "Elmington Park",
+                            TeamAId = 5,
+                            TeamAScore = 3,
+                            TeamBId = 10,
+                            TeamBScore = 2
+                        },
+                        new
+                        {
+                            Id = 30,
+                            GameTime = new DateTime(2019, 6, 6, 19, 30, 0, 0, DateTimeKind.Unspecified),
+                            Location = "West Park",
+                            TeamAId = 5,
+                            TeamAScore = 2,
+                            TeamBId = 1,
+                            TeamBScore = 3
+                        });
                 });
 
             modelBuilder.Entity("LeagueDash.Models.Position", b =>
@@ -554,71 +856,71 @@ namespace LeagueDash.Migrations
                         new
                         {
                             Id = 1,
-                            CaptainId = "53f1ba03-0ee6-48ca-89ff-eee142296415",
-                            DateCreated = new DateTime(2019, 5, 13, 9, 53, 41, 940, DateTimeKind.Local).AddTicks(4905),
+                            CaptainId = "0251cc8d-baaa-4aa6-ba92-1c95d6377770",
+                            DateCreated = new DateTime(2019, 5, 14, 14, 52, 40, 949, DateTimeKind.Local).AddTicks(6582),
                             Name = "Nashville SC"
                         },
                         new
                         {
                             Id = 2,
-                            CaptainId = "1d72818d-8976-44ce-93a7-f47f9feea63d",
-                            DateCreated = new DateTime(2019, 5, 13, 9, 53, 41, 942, DateTimeKind.Local).AddTicks(6782),
+                            CaptainId = "80e593ff-b140-40cb-9947-916ff58a9e4f",
+                            DateCreated = new DateTime(2019, 5, 14, 14, 52, 40, 953, DateTimeKind.Local).AddTicks(1953),
                             Name = "Junior Wombats"
                         },
                         new
                         {
                             Id = 3,
-                            CaptainId = "8f266432-cb10-486b-97c8-8fe339426109",
-                            DateCreated = new DateTime(2019, 5, 13, 9, 53, 41, 942, DateTimeKind.Local).AddTicks(6792),
+                            CaptainId = "0a2fa575-0739-4ee6-a797-83370a17b615",
+                            DateCreated = new DateTime(2019, 5, 14, 14, 52, 40, 953, DateTimeKind.Local).AddTicks(1970),
                             Name = "Salty Pirates"
                         },
                         new
                         {
                             Id = 4,
-                            CaptainId = "0b8b3a0c-fbd9-491e-a8c4-f400e0e0a121",
-                            DateCreated = new DateTime(2019, 5, 13, 9, 53, 41, 942, DateTimeKind.Local).AddTicks(6796),
+                            CaptainId = "ffe39243-ed2a-4531-a1d4-7d87adcd9461",
+                            DateCreated = new DateTime(2019, 5, 14, 14, 52, 40, 953, DateTimeKind.Local).AddTicks(1974),
                             Name = "Earth's Mightiest Heroes"
                         },
                         new
                         {
                             Id = 5,
-                            CaptainId = "6186e7db-c20e-4184-afda-d7acda1b38c7",
-                            DateCreated = new DateTime(2019, 5, 13, 9, 53, 41, 942, DateTimeKind.Local).AddTicks(6803),
+                            CaptainId = "de01d5f4-de08-4b1d-bd03-0f0b3ead376b",
+                            DateCreated = new DateTime(2019, 5, 14, 14, 52, 40, 953, DateTimeKind.Local).AddTicks(1977),
                             Name = "The New Avengers"
                         },
                         new
                         {
                             Id = 6,
-                            CaptainId = "62b2147b-c2f2-48de-89e6-6aed4050737f",
-                            DateCreated = new DateTime(2019, 5, 13, 9, 53, 41, 942, DateTimeKind.Local).AddTicks(6806),
+                            CaptainId = "ec515133-6e28-438f-a93c-d8d3bd897b34",
+                            DateCreated = new DateTime(2019, 5, 14, 14, 52, 40, 953, DateTimeKind.Local).AddTicks(1981),
                             Name = "101st Airborne"
                         },
                         new
                         {
                             Id = 7,
-                            CaptainId = "0b05f2d7-41aa-4ee1-a41c-dac43dfdb87b",
-                            DateCreated = new DateTime(2019, 5, 13, 9, 53, 41, 942, DateTimeKind.Local).AddTicks(6810),
+                            CaptainId = "643f61f2-e472-4286-85a1-d0745e3acd3d",
+                            DateCreated = new DateTime(2019, 5, 14, 14, 52, 40, 953, DateTimeKind.Local).AddTicks(1984),
                             Name = "Space Invaders"
                         },
                         new
                         {
                             Id = 8,
-                            CaptainId = "114fa0b1-9ac0-443c-b9c2-c8c97d44cf31",
-                            DateCreated = new DateTime(2019, 5, 13, 9, 53, 41, 942, DateTimeKind.Local).AddTicks(6813),
+                            CaptainId = "e8a990f7-f7eb-402b-a751-032f589f151b",
+                            DateCreated = new DateTime(2019, 5, 14, 14, 52, 40, 953, DateTimeKind.Local).AddTicks(1988),
                             Name = "Red October"
                         },
                         new
                         {
                             Id = 9,
-                            CaptainId = "0a045a11-593d-421c-b073-415a6b0a7ab0",
-                            DateCreated = new DateTime(2019, 5, 13, 9, 53, 41, 942, DateTimeKind.Local).AddTicks(6817),
+                            CaptainId = "75fb5fe3-0eef-4642-b893-fca05d421344",
+                            DateCreated = new DateTime(2019, 5, 14, 14, 52, 40, 953, DateTimeKind.Local).AddTicks(1995),
                             Name = "Tornadoes"
                         },
                         new
                         {
                             Id = 10,
-                            CaptainId = "e5a76361-c5f6-4ba1-a097-fd15b1eff8a4",
-                            DateCreated = new DateTime(2019, 5, 13, 9, 53, 41, 942, DateTimeKind.Local).AddTicks(6820),
+                            CaptainId = "32a6205f-51d6-4d5e-b34d-5b3d8aea546f",
+                            DateCreated = new DateTime(2019, 5, 14, 14, 52, 40, 953, DateTimeKind.Local).AddTicks(1998),
                             Name = "Predators"
                         });
                 });

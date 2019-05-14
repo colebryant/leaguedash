@@ -4,9 +4,9 @@
     ViewData["Title"] = "Index";
 }
 
-<h3>Standings</h3>
+<h4>League Standings</h4>
 
-@if(Model.CurrentUserRoleId == 2 || Model.CurrentUserRoleId == 3)
+@if((Model.CurrentUser.RoleId == 2 || Model.CurrentUser.RoleId == 3) && Model.CurrentUser.TeamId == null)
 {
     <p>
         <a asp-action="Create">Create New Team</a>

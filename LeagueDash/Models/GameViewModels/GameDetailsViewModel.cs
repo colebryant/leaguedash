@@ -15,5 +15,23 @@ namespace LeagueDash.Models.GameViewModels
 
         [Display(Name = "Team B")]
         public string TeamBName { get; set; }
+
+        public string GDate
+        {
+            get
+            {
+                return Game.GameTime.ToString("M/d/yyyy");
+            }
+        }
+
+        public string GTime
+        {
+            get
+            {
+                return Game.GameTime.ToString("h:mm tt");
+            }
+        }
+
+        public ApplicationUser CurrentUser { get; set; }
     }
 }

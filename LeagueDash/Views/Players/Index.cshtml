@@ -4,15 +4,18 @@
     ViewData["Title"] = "Index";
 }
 
-<h3>Players</h3>
+<h4>Players</h4>
 
 <form asp-action="Index" method="get">
     <div class="form-actions no-color">
         <p>
-            Find by name: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
-            <input type="submit" value="Search" class="btn btn-default" /> |
-            <a asp-action="Index">Back to Full List</a>
+            Find by name: <input type="text" name="searchString" value="@ViewData["currentFilter"]" />
         </p>
+        <p>
+            Include only Free Agents: <input type="checkbox" name="filterAgents" value="true" />
+        </p>
+        <input type="submit" value="Search" class="btn btn-default" /> |
+        <a asp-action="Index">Back to Full List</a>
     </div>
 </form>
 
@@ -20,13 +23,13 @@
     <thead>
         <tr>
             <th>
-                Player Name
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Player Name</a>
             </th>
             <th>
-                Preferred Position
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["PositionSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Preferred Position</a>
             </th>
             <th>
-                Team
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["TeamSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Team</a>
             </th>
             <th></th>
         </tr>

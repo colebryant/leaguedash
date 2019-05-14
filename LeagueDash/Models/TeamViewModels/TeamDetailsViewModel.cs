@@ -11,6 +11,14 @@ namespace LeagueDash.Models.TeamViewModels
     {
         public Team Team { get; set; }
 
+        public string Date
+        {
+            get
+            {
+                return Team.DateCreated.ToString("M/d/yyyy");
+            }
+        }
+
         public string TeamCaptainFirstName { get; set; }
 
         public string TeamCaptainLastName { get; set; }

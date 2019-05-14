@@ -36,6 +36,15 @@
                     <ul class="navbar-nav flex-grow-1">
                         @if (SignInManager.IsSignedIn(User))
                         {
+                            {
+                                var currentUser = await UserManager.FindByIdAsync(UserManager.GetUserId(User));
+                                if (currentUser.TeamId !=null)
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-light" asp-area="" asp-controller="Teams" asp-action="Details/@currentUser.TeamId">My Team</a>
+                                    </li>
+                                }
+                            }
                             <li class="nav-item">
                                 <a class="nav-link text-light" asp-area="" asp-controller="Teams" asp-action="Index">Standings</a>
                             </li>
@@ -45,9 +54,15 @@
                             <li class="nav-item">
                                 <a class="nav-link text-light" asp-area="" asp-controller="Games" asp-action="Index">Game Log</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Games" asp-action="Create">Game Scheduler</a>
-                            </li>
+                            {
+                                var currentUser = await UserManager.FindByIdAsync(UserManager.GetUserId(User));
+                                if (currentUser.RoleId == 3)
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-light" asp-area="" asp-controller="Games" asp-action="Create">Game Scheduler</a>
+                                    </li>
+                                }
+                            }
                         }
                     </ul>
                 </div>

@@ -9,6 +9,6 @@ namespace LeagueDash.Models.TeamViewModels
     {
         public List<TeamDetailsViewModel> TeamList { get; set; }
 
-        public int CurrentUserRoleId { get; set; }
+        public ApplicationUser CurrentUser { get; set; }
     }
 }

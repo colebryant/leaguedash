@@ -4,17 +4,15 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
-
 <div>
-    <h4>Game</h4>
+    <h4>@Html.DisplayFor(model => model.TeamAName) vs. @Html.DisplayFor(model => model.TeamBName)</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Game.GameTime)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Game.GameTime)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GDate) at @Html.DisplayFor(model => model.GTime)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Game.Location)
@@ -29,16 +27,16 @@
             @Html.DisplayFor(model => model.TeamAName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TeamBName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TeamBName)
-        </dd>
-        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Game.TeamAScore)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Game.TeamAScore)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TeamBName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TeamBName)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Game.TeamBScore)
@@ -49,7 +47,15 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Game.Id">Edit</a> |
-    <a asp-action="Delete" asp-route-id="@Model.Game.Id">Delete</a> |
+    @if (Model.CurrentUser.RoleId == 2 && (Model.CurrentUser.TeamId == Model.Game.TeamAId || Model.CurrentUser.TeamId == Model.Game.TeamBId) || Model.CurrentUser.RoleId == 3)
+    {
+        <a asp-action="Edit" asp-route-id="@Model.Game.Id">Edit</a>
+        <span>|</span>
+        @if (Model.CurrentUser.RoleId == 3)
+        {
+            <a asp-action="Delete" asp-route-id="@Model.Game.Id">Delete</a>
+            <span>|</span>
+        }
+    }
     <a asp-action="Index">Back to List</a>
 </div>

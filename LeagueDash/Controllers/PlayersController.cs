@@ -30,9 +30,16 @@ namespace LeagueDash.Controllers
         // GET: Players
         [Authorize]
         public async Task<IActionResult> Index(
+            bool filterAgents,
+            string sortOrder,
             string currentFilter,
             string searchString)
         {
+            ViewData["CurrentSort"] = sortOrder;
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["PositionSortParm"] = sortOrder == "Position" ? "position_desc" : "Position";
+            ViewData["TeamSortParm"] = sortOrder == "Team" ? "team_desc" : "Team";
+
             PlayerListViewModel viewModel = new PlayerListViewModel();
 
             viewModel.PlayerList = await (
@@ -41,6 +48,7 @@ namespace LeagueDash.Controllers
                 from subq1 in sub1.DefaultIfEmpty()
                 join p in _context.Position on au.PositionId equals p.Id into sub2
                 from subq2 in sub2.DefaultIfEmpty()
+                where au.RoleId != 3
                 select new PlayerDetailsViewModel
                 {
                     Player = new ApplicationUser
@@ -59,6 +67,32 @@ namespace LeagueDash.Controllers
             if (!String.IsNullOrEmpty(searchString))
             {
                 viewModel.PlayerList = viewModel.PlayerList.Where(p => p.FullName.Contains(searchString)).ToList();
+            }
+            if (filterAgents)
+            {
+                viewModel.PlayerList = viewModel.PlayerList.Where(p => p.Player.TeamId == null).ToList();
+            }
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    viewModel.PlayerList = viewModel.PlayerList.OrderByDescending(p => p.FullName).ToList();
+                    break;
+                case "Position":
+                    viewModel.PlayerList = viewModel.PlayerList.OrderBy(p => p.Position).ToList();
+                    break;
+                case "position_desc":
+                    viewModel.PlayerList = viewModel.PlayerList.OrderByDescending(p => p.Position).ToList();
+                    break;
+                case "Team":
+                    viewModel.PlayerList = viewModel.PlayerList.OrderBy(p => p.PlayerTeam).ToList();
+                    break;
+                case "team_desc":
+                    viewModel.PlayerList = viewModel.PlayerList.OrderByDescending(p => p.PlayerTeam).ToList();
+                    break;
+                default:
+                    viewModel.PlayerList = viewModel.PlayerList.OrderBy(p => p.FullName).ToList();
+                    break;
             }
 
             return View(viewModel);
@@ -92,7 +126,9 @@ namespace LeagueDash.Controllers
                 Player = player,
                 PlayerTeam = team == null ? "" : team.Name,
                 Position = position.Name,
-                IsOnTeam = player.TeamId == currentUser.TeamId && currentUser.TeamId != null && player.TeamId != null ? true : false
+                IsOnTeam = (player.TeamId == currentUser.TeamId &&
+                    currentUser.TeamId != null && 
+                    player.TeamId != null) ? true : false
             };
 
             return View(viewModel);
@@ -111,12 +147,21 @@ namespace LeagueDash.Controllers
             {
                 ApplicationUser player = await _userManager.FindByIdAsync(Id.ToString());
 
-                if (player.Id == Id.ToString() && player.TeamId == null && currentUser.TeamId != null)
+                if (player.Id == Id.ToString() && 
+                    player.TeamId == null && 
+                    currentUser.TeamId != null &&
+                    player.RoleId != 2 && 
+                    player.RoleId != 3)
                 {
                     player.TeamId = currentUser.TeamId;
                     await _userManager.UpdateAsync(player);
                     await _context.SaveChangesAsync();
-                } else if (player.Id == Id.ToString() && player.TeamId == currentUser.TeamId && player.TeamId != null && currentUser.TeamId != null)
+                } else if (player.Id == Id.ToString() && 
+                    player.TeamId == currentUser.TeamId && 
+                    player.TeamId != null && 
+                    currentUser.TeamId != null && 
+                    player.RoleId != 2 && 
+                    player.RoleId != 3)
                 {
                     player.TeamId = null;
                     await _userManager.UpdateAsync(player);

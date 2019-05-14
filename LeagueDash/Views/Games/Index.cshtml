@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h3>Game Log</h3>
+<h4>Game Log</h4>
 @if (Model.CurrentUserRoleId == 3)
 {
 <p>
@@ -51,7 +51,7 @@
                 @Html.DisplayFor(modelItem => item.Game.TeamBScore)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Game.GameTime)
+                @Html.DisplayFor(modelItem => item.GDate) at @Html.DisplayFor(modelItem => item.GTime)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Game.Location)
