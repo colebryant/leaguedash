@@ -81,11 +81,19 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-  background-color: slategray;
-  color: white;
+    /* Margin bottom by footer height */
+    background-color: whitesmoke;
+    margin-bottom: 60px;
 }
+
+a {
+    color: #75aaff;
+}
+
+.form-custom {
+    margin-top: 4%
+}
+
 .footer {
   position: absolute;
   bottom: 0;

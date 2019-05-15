@@ -11,6 +11,17 @@
     <a asp-action="Create">Schedule New Game</a>
 </p>
 }
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by Team: <input type="text" name="searchString" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            <a asp-action="Index">Back to Full List</a>
+        </p>
+    </div>
+</form>
+
 <table class="table">
     <thead>
         <tr>

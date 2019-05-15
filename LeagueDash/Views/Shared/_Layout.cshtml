@@ -25,7 +25,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3 customNav">
             <div class="container">
-                <img src="~/img/soccer-ball.png" class="customImage"/>
+                <img src="~/img/soccer-ball.png" alt="soccer ball icon" class="customImage"/>
                 <a class="navbar-brand text-light" asp-area="" asp-controller="Home" asp-action="Index">LeagueDash</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -38,10 +38,10 @@
                         {
                             {
                                 var currentUser = await UserManager.FindByIdAsync(UserManager.GetUserId(User));
-                                if (currentUser.TeamId !=null)
+                                if (currentUser.TeamId != null)
                                 {
                                     <li class="nav-item">
-                                        <a class="nav-link text-light" asp-area="" asp-controller="Teams" asp-action="Details/@currentUser.TeamId">My Team</a>
+                                        <a class="nav-link text-light" asp-area="" asp-controller="Teams" asp-action="Details" asp-route-id="@currentUser.TeamId">My Team</a>
                                     </li>
                                 }
                             }

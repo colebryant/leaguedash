@@ -30,7 +30,8 @@ namespace LeagueDash.Controllers
 
         // GET: Games
         [Authorize]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(
+            string searchString)
         {
             var currentUser = await GetCurrentUserAsync();
 
@@ -58,6 +59,11 @@ namespace LeagueDash.Controllers
                     TeamAName = subq1.Name,
                     TeamBName = subq2.Name
                 }).ToListAsync();
+
+            if(!String.IsNullOrEmpty(searchString))
+            {
+                viewModel.GameList = viewModel.GameList.Where(g => g.TeamAName.Contains(searchString) || g.TeamBName.Contains(searchString)).ToList();
+            }
 
             return View(viewModel);
         }
