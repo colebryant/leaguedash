@@ -225,19 +225,26 @@ namespace LeagueDash.Controllers
         [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
+            var currentUser = await GetCurrentUserAsync();
+            if (currentUser.RoleId == 3)
             {
-                return NotFound();
-            }
+                    if (id == null)
+                {
+                    return NotFound();
+                }
 
-            var team = await _context.Team
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (team == null)
+                var team = await _context.Team
+                    .FirstOrDefaultAsync(m => m.Id == id);
+                if (team == null)
+                {
+                    return NotFound();
+                }
+
+                return View(team);
+            } else
             {
-                return NotFound();
+                return View();
             }
-
-            return View(team);
         }
 
         // POST: Teams/Delete/5
@@ -246,21 +253,28 @@ namespace LeagueDash.Controllers
         [Authorize]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var team = await _context.Team.FindAsync(id);
-            _context.Team.Remove(team);
-            var teamPlayers = await _context.ApplicationUsers.Where(p => p.TeamId == team.Id).ToListAsync();  
-            foreach (ApplicationUser p in teamPlayers)
+            var currentUser = await GetCurrentUserAsync();
+            if (currentUser.RoleId == 3)
             {
-                p.TeamId = null;
-                _context.ApplicationUsers.Update(p);
-            };
-            var teamGames = await _context.Game.Where(g => g.TeamAId == team.Id || g.TeamBId == team.Id).ToListAsync();
-            foreach (Game g in teamGames)
+                var team = await _context.Team.FindAsync(id);
+                _context.Team.Remove(team);
+                var teamPlayers = await _context.ApplicationUsers.Where(p => p.TeamId == team.Id).ToListAsync();  
+                foreach (ApplicationUser p in teamPlayers)
+                {
+                    p.TeamId = null;
+                    _context.ApplicationUsers.Update(p);
+                };
+                var teamGames = await _context.Game.Where(g => g.TeamAId == team.Id || g.TeamBId == team.Id).ToListAsync();
+                foreach (Game g in teamGames)
+                {
+                    _context.Game.Remove(g);
+                };
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            } else
             {
-                _context.Game.Remove(g);
-            };
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+                return View();
+            }
         }
 
         private bool TeamExists(int id)
