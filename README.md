@@ -3,6 +3,8 @@
 LeagueDash is a desktop application built to assist in organizing a recreational soccer league including team formation,
 game scheduling, and calculating the league standings in real time.
 
+![](AppSnapshot.jpg)
+
 There are three types of users in LeagueDash:
 
 1. Players
